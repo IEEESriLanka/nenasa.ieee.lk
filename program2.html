@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Robotics Workshop – Nenasa</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <style>
+    :root {
+      --bg-light: #ffffff;
+      --text-light: #212529;
+      --bg-dark: #121212;
+      --text-dark: #f8f9fa;
+      --card-bg-light: #ffffff;
+      --card-bg-dark: #1e1e1e;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-light);
+      transition: background-color 0.3s, color 0.3s;
+    }
+    body.dark-mode {
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+    }
+    body.dark-mode .navbar {
+      background-color: var(--bg-dark) !important;
+    }
+    body.dark-mode .navbar .nav-link,
+    body.dark-mode .navbar .navbar-brand {
+      color: var(--text-dark) !important;
+    }
+    body.dark-mode .card {
+      background-color: var(--card-bg-dark);
+      color: var(--text-dark);
+    }
+    body.dark-mode .text-muted {
+      color: rgba(248, 249, 250, 0.7) !important;
+    }
+    body.dark-mode .bg-light {
+      background-color: var(--bg-dark) !important;
+    }
+    .navbar-brand {
+      background-image: url('/assets/img/nenasa_Logo.png');
+      width: 120px;
+      height: 40px;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    @media (min-width: 992px) {
+    header {
+      padding-left: 2%;
+      padding-right: 2%;
+      }
+    }
+    footer {
+      background-color: var(--bg-light);
+      color: var(--text-light);
+      padding: 2rem 0;
+    }
+    body.dark-mode footer {
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+    }
+    .hero-section {
+      padding: 4rem 0;
+    }
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body>
+  <header class="fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container-fluid">
+        <a class="navbar-brand fw-bold" href="index.html"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav align-items-lg-center">
+            <!-- Replicate navigation from the home page: Home, Projects, About, Contact -->
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#approach">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+            <li class="nav-item ms-lg-3">
+              <button id="darkModeToggle" class="btn btn-outline-secondary"><i class="bi bi-moon"></i></button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main class="mt-5 pt-5">
+    <section class="hero-section">
+      <div class="container">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-6" data-aos="fade-right">
+            <h1 class="fw-bold mb-3">Game Development Workshop</h1>
+            <p class="lead">Our primary goal was to introduce them to the foundational concepts of game development and help them realize that game creation is not only fun but also accessible to anyone with a passion for learning.<br><br>
+            The session began with an overview of what makes a game engaging—storytelling, interactivity, challenge, and feedback. We explained the difference between 2D and 3D games, and how assets such as sprites, sounds, and animations come together to create a compelling experience. Students were introduced to key game development components like game loops, event-driven programming, and frame rendering. We used Scratch to demonstrate logic building with block-based coding, which helped them understand core concepts such as conditions, variables, loops, and event handlers in a visual and interactive way.<br><br>
+            For older students, we introduced Unity and gave them a hands-on walkthrough of creating a simple 2D platformer. They learned how to add player controls using C# scripting, how to implement physics like gravity and collisions. We also touched on UI elements like health bars and score counters.<br><br>
+            In addition, we explored how game development ties into other STEM fields—math for collision detection and movement calculations, physics for realistic interactions, and art for visual storytelling. The session concluded with a fun mini-hackathon where students teamed up to brainstorm, design, and prototype their own simple games.<br><br>
+            Overall, the session was not just about teaching technical skills, but about opening up a world of possibilities. It gave students the confidence to see themselves not just as consumers of technology, but as future creators and innovators in the gaming industry.</p>
+          </div>
+          <div class="col-lg-6" data-aos="fade-left">
+            <img src="assets/img/nakkawatta1.jpg" alt="Game Development Workshop" class="img-fluid rounded">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="text-center">
+    <div class="container">
+      <p class="mb-1">&copy; <span id="year"></span>IEEE Nenasa. All rights reserved.</p>
+      <nav class="d-inline-block">
+        <a href="index.html" class="me-3 text-decoration-none">Home</a>
+        <a href="index.html#approach" class="me-3 text-decoration-none">Projects</a>
+        <a href="about.html" class="me-3 text-decoration-none">About</a>
+        <a href="index.html#contact" class="text-decoration-none">Contact</a>
+      </nav>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    AOS.init({ once: true });
+    const toggleBtn = document.getElementById('darkModeToggle');
+    const body = document.body;
+    const savedTheme = localStorage.getItem('nenasa-theme');
+    if (savedTheme === 'dark') {
+      body.classList.add('dark-mode');
+      toggleBtn.innerHTML = '<i class="bi bi-sun"></i>';
+    }
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      if (body.classList.contains('dark-mode')) {
+        toggleBtn.innerHTML = '<i class="bi bi-sun"></i>';
+        localStorage.setItem('nenasa-theme', 'dark');
+      } else {
+        toggleBtn.innerHTML = '<i class="bi bi-moon"></i>';
+        localStorage.setItem('nenasa-theme', 'light');
+      }
+    });
+  </script>
+</body>
+</html>
