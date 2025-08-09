@@ -1,0 +1,18 @@
+[
+  {
+    "id": "prog-01",
+    "title": "Nakkawatta National School Kurunegala",
+    "description": "Hands-on workshop where students design and build their own games while learning coding, storytelling, and game mechanics.",
+    "image": "assets/img/Nakkawatta.jpg",
+    "alt": "Workshop at Nakkawatta National School Kurunegala",
+    "link": "program1.html"
+  },
+  {
+    "id": "prog-02",
+    "title": "Karagasthalawa Maha Vidyalaya Belihuloya",
+    "description": "A fun coding camp introducing students to programming and problem‑solving.",
+    "image": "assets/img/Karagasthalawa.jpg",
+    "alt": "Workshop at Karagasthalawa Maha Vidyalaya Belihuloya",
+    "link": "program2.html"
+  }
+]
