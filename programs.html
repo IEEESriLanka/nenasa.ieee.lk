@@ -52,7 +52,10 @@
       background-color: var(--bg-dark);
       color: var(--text-dark);
     }
-
+    header {
+      background-color: var(--bg-light);
+      transition: background-color 0.3s;
+    }
     @media (min-width: 992px) {
       header { padding-left: 2%; padding-right: 2%; }
     }
@@ -88,18 +91,31 @@
   <header class="fixed-top">
     <nav class="navbar navbar-expand-lg navbar-light">
       <div class="container-fluid">
-        <a class="navbar-brand fw-bold" href="index.html"></a>
+        <a class="navbar-brand" href="#hero"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul class="navbar-nav align-items-lg-center">
-            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link active" href="#">Projects</a></li>
-            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="competitions.html">Competitions</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="programs.html">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
             <li class="nav-item ms-lg-3">
-              <button id="darkModeToggle" class="btn btn-outline-secondary"><i class="bi bi-moon"></i></button>
+              <button id="darkModeToggle" class="btn btn-outline-secondary">
+                <i class="bi bi-moon"></i>
+              </button>
             </li>
           </ul>
         </div>
@@ -168,9 +184,9 @@
       </ul>
 
       <!-- Copyright / claims -->
-      <p class="mb-1 small">&copy; <span id="year"></span> IEEE Nenasa. All rights reserved.</p>
+      <p class="mb-1 small">&copy; <span id="year"></span> IEEE Sri Lanka Section. All rights reserved.</p>
       <p class="mb-0 small text-muted">
-        All trademarks and logos are the property of their respective owners and are used for identification purposes only.
+        Design & Developed by Nenasa Project
       </p>
     </div>
   </footer>

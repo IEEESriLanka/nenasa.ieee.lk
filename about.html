@@ -65,6 +65,10 @@
     body.dark-mode .form-control::placeholder {
       color: #8a8a8a;
     }
+    header {
+      background-color: var(--bg-light);
+      transition: background-color 0.3s;
+    }
 
     @media (min-width: 992px) {
       header {
@@ -124,7 +128,7 @@
   <header class="fixed-top">
     <nav class="navbar navbar-expand-lg navbar-light">
       <div class="container-fluid">
-        <a class="navbar-brand fw-bold" href="index.html"></a>
+        <a class="navbar-brand" href="#hero"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -134,10 +138,13 @@
               <a class="nav-link" href="index.html">Home</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="competitions.html">Competitions</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="programs.html">Projects</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="#">About</a>
+              <a class="nav-link active" href="about.html">About</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="contact.html">Contact</a>
@@ -279,9 +286,9 @@
       </ul>
 
       <!-- Copyright / claims -->
-      <p class="mb-1 small">&copy; <span id="year"></span> IEEE Nenasa. All rights reserved.</p>
+      <p class="mb-1 small">&copy; <span id="year"></span> IEEE Sri Lanka Section. All rights reserved.</p>
       <p class="mb-0 small text-muted">
-        All trademarks and logos are the property of their respective owners and are used for identification purposes only.
+        Design & Developed by Nenasa Project
       </p>
     </div>
   </footer>
