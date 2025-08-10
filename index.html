@@ -130,6 +130,33 @@
         background-repeat: no-repeat;
     }
 
+        /* Stat strip */
+    .stat-box {
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      border-radius: 1rem;
+      backdrop-filter: blur(4px);
+      text-align: left;
+    }
+    .stat-number {
+      font-weight: 800;
+      font-size: 2rem;
+      line-height: 1;
+      margin-bottom: .5rem;
+    }
+    .stat-text {
+      font-size: 0.975rem;
+    }
+
+    /* Dark mode friendly (optional) */
+    @media (prefers-color-scheme: dark) {
+      .stat-box {
+        background: rgba(17, 24, 39, 0.75);
+        border-color: rgba(255,255,255,0.08);
+        color: #e5e7eb;
+      }
+    }
+
     .card-hover {
       transition: transform 0.3s, box-shadow 0.3s;
     }
@@ -262,18 +289,53 @@
     </nav>
   </header>
   <main class="mt-5 pt-2">
-    <!-- Hero Section -->
-    <section id="hero" class="hero">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-10 text-center" data-aos="fade-up">
-            <h1 class="mb-3 main-title">Empowering the Next Generation of Innovators in Sri Lanka</h1>
-            <p class="mb-4">Nenasa is transforming STEM education through volunteer‑driven learning experiences that inspire curiosity and build future‑ready skills.</p>
-            <a href="#get-involved" class="btn btn-outline-info btn-lg">Join the Mission</a>
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10 text-center" data-aos="fade-up">
+          <h1 class="mb-3 main-title">Empowering the Next Generation of Innovators in New York</h1>
+          <p class="mb-4">
+            ADS is transforming STEM education through volunteer-driven learning <br>experiences that inspire curiosity and build future-ready skills.
+          </p>
+
+          <!-- Overall Stats -->
+          <div class="row g-4 mt-5 justify-content-center" data-aos="fade-up" data-aos-delay="150">
+            <!-- Stat 1 -->
+            <div class="col-12 col-sm-6 col-xl-2">
+              <div class="stat-box h-100 p-4 text-center">
+                <div class="stat-number" data-target="20" data-suffix="+">0</div>
+                <p class="stat-text mb-0">
+                Interactive STEM sessions
+                </p>
+              </div>
+            </div>
+            <!-- Stat 2 -->
+            <div class="col-12 col-sm-6 col-xl-2">
+              <div class="stat-box h-100 p-4 text-center">
+                <div class="stat-number" data-target="3000" data-suffix="+">0</div>
+                <p class="stat-text mb-0">
+                  Students Engaged
+                </p>
+              </div>
+            </div>
+            <!-- Stat 3 -->
+            <div class="col-12 col-sm-6 col-xl-2">
+              <div class="stat-box h-100 p-4 text-center">
+                <div class="stat-number" data-target="30" data-suffix="+">0</div>
+                <p class="stat-text mb-0">
+                  Partnered Institutions
+                </p>
+              </div>
+            </div>
           </div>
+          <!-- /Overall Stats -->
         </div>
       </div>
-    </section>
+    </div>
+  </section>
+
+
     <!-- Why It Matters Section -->
     <section id="why" class="py-5 bg-light">
       <div class="container">
@@ -462,5 +524,47 @@
       }
     });
   </script>
+  <script>
+  (function () {
+    const format = new Intl.NumberFormat();
+
+    function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+
+    function animateCounter(el) {
+      const target = parseInt(el.dataset.target || "0", 10);
+      const suffix = el.dataset.suffix || "";
+      const duration = parseInt(el.dataset.duration || "1500", 10);
+
+      const startTime = performance.now();
+
+      function tick(now) {
+        const progress = Math.min((now - startTime) / duration, 1);
+        const eased = easeOutCubic(progress);
+        const value = Math.floor(target * eased);
+        el.textContent = format.format(value) + suffix;
+
+        if (progress < 1) requestAnimationFrame(tick);
+      }
+
+      requestAnimationFrame(tick);
+    }
+
+    const counters = document.querySelectorAll(".stat-number");
+
+    // Trigger on scroll into view
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !entry.target.dataset.counted) {
+          entry.target.dataset.counted = "true"; // run once
+          animateCounter(entry.target);
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+
+    counters.forEach((el) => io.observe(el));
+  })();
+  </script>
+
 </body>
 </html>
