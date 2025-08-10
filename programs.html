@@ -110,11 +110,15 @@
   <main class="mt-5 pt-2">
     <section class="py-5">
       <div class="container">
-        <h2 class="text-center fw-bold mb-5" data-aos="fade-up">Workshops – 2025</h2>
+        <h3 class="text-center fw-bold mb-5" data-aos="fade-up">Workshops – 2025</h3>
 
         <!-- Dynamic grid populated from programs.json -->
         <div id="programGrid" class="row g-4" aria-live="polite"></div>
         <div id="programStatus" class="text-center text-muted mt-3">Loading programs…</div>
+
+        <h3 class="text-center fw-bold mt-5 mb-5" data-aos="fade-up">Workshops – 2024</h3>
+        <div id="programGrid2024" class="row g-4" aria-live="polite"></div>
+        <div id="programStatus2024" class="text-center text-muted mt-3">Loading 2024 workshops…</div>
       </div>
     </section>
   </main>
@@ -197,67 +201,65 @@
       }
     });
 
-    // ===== Programs from external JSON =====
-    const grid = document.getElementById('programGrid');
-    const statusEl = document.getElementById('programStatus');
+  const escapeHTML = (s = '') =>
+    s.replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 
-    const escapeHTML = (s = '') =>
-      s.replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+  function cardHTML(p, i) {
+    const delay = 100 * (i + 1);
+    const title = escapeHTML(p.title || 'Untitled Program');
+    const desc = escapeHTML(p.description || '');
+    const img = p.image || 'assets/img/placeholder.jpg';
+    const link = p.link || '#';
+    const alt = escapeHTML(p.alt || p.title || 'Program image');
 
-    function cardHTML(p, i) {
-      const delay = 100 * (i + 1); // 100, 200, 300...
-      const title = escapeHTML(p.title || 'Untitled Program');
-      const desc = escapeHTML(p.description || '');
-      const img = p.image || 'assets/img/placeholder.jpg';
-      const link = p.link || '#';
-      const alt = escapeHTML(p.alt || p.title || 'Program image');
-
-      return `
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="${delay}">
-          <a href="${link}" class="text-decoration-none" aria-label="${title}">
-            <div class="card card-hover program-card h-100">
-              <img src="${img}" alt="${alt}" class="card-img-top" loading="lazy"
-                   onerror="this.onerror=null;this.src='assets/img/placeholder.jpg';">
-              <div class="overlay">
-                <p class="mb-0">${desc}</p>
-              </div>
-              <div class="card-body text-center">
-                <h5 class="fw-bold mb-0">${title}</h5>
-              </div>
+    return `
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="${delay}">
+        <a href="${link}" class="text-decoration-none" aria-label="${title}">
+          <div class="card card-hover program-card h-100">
+            <img src="${img}" alt="${alt}" class="card-img-top" loading="lazy"
+                 onerror="this.onerror=null;this.src='assets/img/placeholder.jpg';">
+            <div class="overlay">
+              <p class="mb-0">${desc}</p>
             </div>
-          </a>
-        </div>
-      `;
-    }
+            <div class="card-body text-center">
+              <h5 class="fw-bold mb-0">${title}</h5>
+            </div>
+          </div>
+        </a>
+      </div>
+    `;
+  }
 
-    function renderPrograms(list) {
-      if (!Array.isArray(list) || list.length === 0) {
-        grid.innerHTML = '';
-        statusEl.textContent = 'No programs yet.';
-        return;
-      }
-      grid.innerHTML = list.map((p, i) => cardHTML(p, i)).join('');
-      statusEl.textContent = '';
-      // Recalculate AOS positions after DOM update
-      if (window.AOS && typeof AOS.refresh === 'function') AOS.refresh();
+  function renderInto(containerSel, statusSel, list) {
+    const grid = document.querySelector(containerSel);
+    const statusEl = document.querySelector(statusSel);
+    if (!Array.isArray(list) || list.length === 0) {
+      grid.innerHTML = '';
+      statusEl.textContent = 'No items yet.';
+      return;
     }
+    grid.innerHTML = list.map((p, i) => cardHTML(p, i)).join('');
+    statusEl.textContent = '';
+    if (window.AOS && typeof AOS.refresh === 'function') AOS.refresh();
+  }
 
-    async function loadPrograms() {
-      try {
-        const res = await fetch('programs.json', { cache: 'no-store' });
-        if (!res.ok) throw new Error('HTTP ' + res.status);
-        const data = await res.json();
-        renderPrograms(data);
-      } catch (e) {
-        console.error(e);
-        statusEl.classList.add('text-danger');
-        statusEl.textContent = 'Could not load programs. Please try again later.';
-      }
+  async function loadPrograms(jsonPath, containerSel, statusSel) {
+    try {
+      const res = await fetch(jsonPath, { cache: 'no-store' });
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const data = await res.json();
+      renderInto(containerSel, statusSel, data);
+    } catch (e) {
+      console.error(e);
+      const statusEl = document.querySelector(statusSel);
+      statusEl.classList.add('text-danger');
+      statusEl.textContent = 'Could not load items.';
     }
+  }
 
-    loadPrograms();
-    // Optional: auto-refresh every minute
-    // setInterval(loadPrograms, 60000);
-  </script>
+  // Current + 2024
+  loadPrograms('programs.json', '#programGrid', '#programStatus');
+  loadPrograms('programs-2024.json', '#programGrid2024', '#programStatus2024');
+</script>
 </body>
 </html>
