@@ -2,7 +2,7 @@
   {
     "id": "prog-2024-01",
     "title": "Kottawa Dharmapala College",
-    "description": "Hands-on Arduino + sensors. 40 students built line-following bots.",
+    "description": "Introducing IoT concepts through playful, kid-friendly projects.",
     "image": "assets/img/pre-session-01.jpg",
     "alt": "Kottawa Dharmapala College",
     "link": "program-kottawa-dharmapala.html"
@@ -18,7 +18,7 @@
   {
     "id": "prog-2024-03",
     "title": "Sri Sumangala Maha Vidyalaya Nabadawewa",
-    "description": "Workshops on circuits, coding, and simple machines.",
+    "description": "Exploring IoT by connecting sensors to the cloud in a hands-on workshop.",
     "image": "assets/img/pre-session-03.jpg",
     "alt": "Sri Sumangala Maha Vidyalaya Nabadawewa",
     "link": "program-nabadawewa-sumangala.html"
@@ -26,7 +26,7 @@
   {
     "id": "prog-2024-04",
     "title": "Badulla Central College",
-    "description": "Workshops on circuits, coding, and simple machines.",
+    "description": "Discovering how IoT bridges the physical and digital worlds.",
     "image": "assets/img/pre-session-04.jpg",
     "alt": "Badulla Central College",
     "link": "program-badulla-central.html"
@@ -34,7 +34,7 @@
   {
     "id": "prog-2024-05",
     "title": "Fathima Muslim Ladies College Colombo",
-    "description": "Workshops on circuits, coding, and simple machines.",
+    "description": "Creating interactive IoT projects that respond to real-world data.",
     "image": "assets/img/pre-session-05.jpg",
     "alt": "Fathima Muslim Ladies College Colombo",
     "link": "program-muslim-ladies.html"
