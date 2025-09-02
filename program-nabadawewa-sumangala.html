@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Robotics and Arduino Workshop – Nenasa</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <style>
+    :root {
+      --bg-light: #ffffff;
+      --text-light: #212529;
+      --bg-dark: #121212;
+      --text-dark: #f8f9fa;
+      --card-bg-light: #ffffff;
+      --card-bg-dark: #1e1e1e;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-light);
+      transition: background-color 0.3s, color 0.3s;
+    }
+    body.dark-mode {
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+    }
+    body.dark-mode .navbar {
+      background-color: var(--bg-dark) !important;
+    }
+    body.dark-mode .navbar .nav-link,
+    body.dark-mode .navbar .navbar-brand {
+      color: var(--text-dark) !important;
+    }
+    body.dark-mode .card {
+      background-color: var(--card-bg-dark);
+      color: var(--text-dark);
+    }
+    body.dark-mode .text-muted {
+      color: rgba(248, 249, 250, 0.7) !important;
+    }
+    body.dark-mode .bg-light {
+      background-color: var(--bg-dark) !important;
+    }
+    header {
+      background-color: var(--bg-light);
+      transition: background-color 0.3s;
+    }
+    @media (min-width: 992px) {
+      header {
+        padding-left: 2%;
+        padding-right: 2%;
+      }
+    }
+    .navbar-brand {
+      background-image: url('/assets/img/nenasa_Logo.png');
+      width: 120px;
+      height: 40px;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    @media (min-width: 992px) {
+    header {
+      padding-left: 2%;
+      padding-right: 2%;
+      }
+    }
+    footer {
+      background-color: var(--bg-light);
+      color: var(--text-light);
+      padding: 2rem 0;
+    }
+    body.dark-mode footer {
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+    }
+    .hero-section {
+      padding: 4rem 0;
+    }
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body>
+  <!-- Header and Navigation -->
+  <header class="fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#hero"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav align-items-lg-center">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="competitions.html">Competitions</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="programs.html">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item ms-lg-3">
+              <button id="darkModeToggle" class="btn btn-outline-secondary">
+                <i class="bi bi-moon"></i>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main class="mt-5 pt-5">
+    <section class="hero-section">
+      <div class="container">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-6" data-aos="fade-right">
+            <h1 class="fw-bold mb-3">Robotics and Arduino Practical Session</h1><br>
+            <p class="lead">On June 14th, 2024, at 9:00 AM, a special program on Robotics and Arduino was held at Sri Sumangala Maha Vidyalaya, Nabadawewa, Eppawala. The event was organized with the support of Nenansa participants – Madhushan, Disara, Nimeshika, and Kavithra. It was designed to introduce students to new technology, spark creativity, and give them the chance to experience innovation hands-on.
+            <br><br>
+            The program began with an introductory speech by the Vice Principal, who warmly welcomed everyone and shared an overview of the day’s schedule. After that, the Principal addressed the gathering, highlighting the importance of the event for student growth and development. He encouraged the students to participate actively and to take full advantage of the knowledge and opportunities being shared.
+            <br><br>
+            Following this, Chamodi, the Chairperson of Nenansa, delivered an inspiring speech. She encouraged students to follow their passions and reminded us about the many opportunities waiting in different fields for those who are curious and hardworking. Her words really motivated the audience to look at technology not just as a subject, but as a tool to build their future.
+            <br><br>
+            With the formalities done, the workshop officially began. Madhushan led the first practical session on Robotics and Arduino, where students were introduced to the basics of robotics in a simple, engaging way. Afterwards, Nimeshika introduced another key session, which further deepened the students’ understanding of technology and innovation. These sessions were interactive, and the students had the chance to ask questions, share ideas, and get hands-on experience.
+            <br><br>
+            Towards the end, students gave feedback about the program, sharing how much they learned and how excited they were to keep exploring robotics. To support that journey, the organizers made a meaningful contribution by donating Arduino kits to the school. This gift will allow the students to continue practicing and experimenting with robotics even after the event.
+            <br><br>
+            Finally, the Vice Principal delivered the Vote of Thanks, appreciating everyone who contributed to making the program a success. The day was not only educational but also inspiring, leaving students motivated to explore technology and innovation with confidence.</p>
+          </div>
+          <div class="col-lg-6" data-aos="fade-left">
+            <img src="assets/img/nabadawewa1.jpg" alt="Fathima-ladies3" class="img-fluid rounded">
+            <br><br>
+            <img src="assets/img/nabadawewa3.jpg" alt="Fathima-ladies1" class="img-fluid rounded">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- Footer -->
+  <footer class="text-center pt-4 pb-4">
+    <div class="container">
+      <!-- Logos row: partner - main - partner -->
+      <div class="d-flex justify-content-center align-items-center gap-4 flex-wrap mb-3">
+        <!-- Partner (left) -->
+        <img src="assets/img/nenasa_Logo.png" alt="Partner logo 1"
+            class="img-fluid" style="height:36px" loading="lazy">
+        <!-- Main site logo (center) -->
+        <img src="assets/img/SIGHT-logo.png" alt="Main site logo"
+            class="img-fluid" style="height:48px" loading="lazy">
+        <!-- Partner (right) -->
+        <img src="assets/img/IEEE-SL.png" alt="Partner logo 2"
+            class="img-fluid" style="height:36px" loading="lazy">
+      </div>
+
+      <!-- Social links -->
+      <ul class="list-unstyled d-flex justify-content-center gap-3 fs-4 mb-3">
+        <li>
+          <a href="https://www.facebook.com/share/1HcgRAAKkG/" target="_blank" rel="noopener"
+            class="text-decoration-none text-body" aria-label="Facebook">
+            <i class="bi bi-facebook"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/ieeenenasa?igsh=cmxsMmJudm5hamdl" target="_blank" rel="noopener"
+            class="text-decoration-none text-body" aria-label="Instagram">
+            <i class="bi bi-instagram"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/company/ieee-nenasa/" target="_blank" rel="noopener"
+            class="text-decoration-none text-body" aria-label="LinkedIn">
+            <i class="bi bi-linkedin"></i>
+          </a>
+        </li>
+        <li>
+          <a href="contact.html"
+            class="text-decoration-none text-body" aria-label="Email">
+            <i class="bi bi-envelope"></i>
+          </a>
+        </li>
+      </ul>
+
+      <!-- Copyright / claims -->
+      <p class="mb-1 small">&copy; <span id="year"></span> IEEE Sri Lanka Section. All rights reserved.</p>
+      <p class="mb-0 small text-muted">
+        Design & Developed by Nenasa Project
+      </p>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    AOS.init({ once: true });
+    const toggleBtn = document.getElementById('darkModeToggle');
+    const body = document.body;
+    const savedTheme = localStorage.getItem('nenasa-theme');
+    if (savedTheme === 'dark') {
+      body.classList.add('dark-mode');
+      toggleBtn.innerHTML = '<i class="bi bi-sun"></i>';
+    }
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      if (body.classList.contains('dark-mode')) {
+        toggleBtn.innerHTML = '<i class="bi bi-sun"></i>';
+        localStorage.setItem('nenasa-theme', 'dark');
+      } else {
+        toggleBtn.innerHTML = '<i class="bi bi-moon"></i>';
+        localStorage.setItem('nenasa-theme', 'light');
+      }
+    });
+  </script>
+</body>
+</html>
