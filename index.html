@@ -11,93 +11,42 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <style>
-    /* Color variables for light and dark modes */
+    /* Color variables */
     :root {
       --bg-light: #ffffff;
       --text-light: #212529;
-      --bg-dark: #121212;
-      --text-dark: #ebecee;
       --primary: #0066cc;
       --card-bg-light: #ffffff;
-      --card-bg-dark: #1e1e1e;
+      --card-bg-dark: #1e1e1e; /* unused now, kept for consistency if needed */
     }
+
     body {
       font-family: 'Poppins', sans-serif;
       background-color: var(--bg-light);
       color: var(--text-light);
       transition: background-color 0.3s, color 0.3s;
     }
-    body.dark-mode {
-      background-color: var(--bg-dark);
-      color: var(--text-dark);
-    }
-    body.dark-mode .card {
-      background-color: var(--card-bg-dark);
-    }
-    body.dark-mode .navbar {
-      background-color: var(--bg-dark) !important;
-    }
 
-    body.dark-mode .navbar .nav-link,
-    body.dark-mode .navbar .navbar-brand {
-      color: var(--text-dark) !important;
-    }
-
-    /* Override light backgrounds in dark mode for a cohesive appearance */
-    body.dark-mode .bg-light {
-      background-color: var(--bg-dark) !important;
-    }
-    body.dark-mode .bg-white {
-      background-color: var(--bg-dark) !important;
-    }
-    body.dark-mode .text-dark {
-      color: var(--text-dark) !important;
-    }
-
-    /* Form controls adjustments in dark mode */
-    /* Improve form control contrast in dark mode */
-    body.dark-mode .form-control {
-      /* Provide contrast for inputs in dark mode */
-      background-color: #2a2a2a; /* slightly lighter to differentiate from page */
-      color: var(--text-dark);
-      border-color: #555;
-    }
-    body.dark-mode .form-control::placeholder {
-      color: #8a8a8a;
-    }
     header {
       background-color: var(--bg-light);
       transition: background-color 0.3s;
     }
 
     @media (min-width: 992px) {
-    header {
-      padding-left: 2%;
-      padding-right: 2%;
+      header {
+        padding-left: 2%;
+        padding-right: 2%;
       }
     }
 
-    body.dark-mode header {
-      background-color: var(--bg-dark);
-    }
-
-    /* main-title {
-      
-    } */
-
-    /* Universal card styling for better contrast on light backgrounds */
+    /* Universal card styling */
     .card {
       background-color: var(--card-bg-light);
       border: none;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     }
-    body.dark-mode .card {
-      background-color: var(--card-bg-dark);
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      color: var(--text-dark);
-    }
-    /* Hero styles */
 
+    /* Hero styles */
     .hero { background: none !important; }
 
     .hero-slide{
@@ -110,27 +59,20 @@
       align-items:center;
     }
 
-/* Safety: in case any controls/indicators remain in DOM from previous code */
-.carousel-control-prev,
-.carousel-control-next,
-.carousel-indicators { display:none !important; }
+    /* Hide any manual controls/indicators */
+    .carousel-control-prev,
+    .carousel-control-next,
+    .carousel-indicators { display:none !important; }
 
-
-    /* Make indicators visible on dark images */
+    /* Indicators (kept for future reuse) */
     #heroCarousel .carousel-indicators [data-bs-target] {
       background-color: rgba(255,255,255,0.8);
     }
 
-    /* Improve control icons visibility */
     #heroCarousel .carousel-control-prev-icon,
     #heroCarousel .carousel-control-next-icon {
       filter: drop-shadow(0 2px 4px rgba(0,0,0,.4));
     }
-
-    /* Dark mode: nothing special needed because slides are already darkened,
-      but keep parity with your theme overrides */
-    body.dark-mode .hero { background: none !important; }
-
 
     .hero h1 {
       font-weight: 600;
@@ -138,20 +80,21 @@
     }
 
     .navbar-brand {
-        background-image: url('/assets/img/nenasa_Logo.png');
-        width: 120px;
-        height: 40px;
-        background-size: contain;
-        background-repeat: no-repeat;
+      background-image: url('/assets/img/Nenasa_Logo.png');
+      width: 120px;
+      height: 40px;
+      background-size: contain;
+      background-repeat: no-repeat;
     }
 
-        /* Stat strip */
+    /* Stat strip */
     .stat-box {
       background: rgba(17, 24, 39, 0.75);
       border: 1px solid rgba(0, 0, 0, 0.06);
       border-radius: 1rem;
       backdrop-filter: blur(4px);
       text-align: left;
+      color: #e5e7eb;
     }
     .stat-number {
       font-weight: 800;
@@ -161,15 +104,6 @@
     }
     .stat-text {
       font-size: 0.975rem;
-    }
-
-    /* Dark mode friendly (optional) */
-    @media (prefers-color-scheme: dark) {
-      .stat-box {
-        background: rgba(17, 24, 39, 0.75);
-        border-color: rgba(255,255,255,0.08);
-        color: #e5e7eb;
-      }
     }
 
     .card-hover {
@@ -216,12 +150,8 @@
       background-color: var(--primary);
       z-index: -1;
     }
-    .timeline-step:first-child::before {
-      left: 50%;
-    }
-    .timeline-step:last-child::before {
-      right: 50%;
-    }
+    .timeline-step:first-child::before { left: 50%; }
+    .timeline-step:last-child::before { right: 50%; }
     .timeline-circle {
       width: 50px;
       height: 50px;
@@ -234,6 +164,7 @@
       margin: 0 auto 1rem;
       font-weight: 600;
     }
+
     /* Testimonial styles */
     .carousel-item {
       text-align: center;
@@ -246,6 +177,7 @@
       object-fit: cover;
       margin: 0 auto 1rem;
     }
+
     /* Get involved cards */
     .get-involved .card {
       border: none;
@@ -255,19 +187,15 @@
       transform: translateY(-5px);
       box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     }
+
     footer {
       background-color: var(--bg-light);
       color: var(--text-light);
       padding: 2rem 0;
     }
-    body.dark-mode footer {
-      background-color: var(--bg-dark);
-      color: var(--text-dark);
-    }
+
     /* Smooth scroll */
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
   </style>
 </head>
 <body>
@@ -296,168 +224,164 @@
             <li class="nav-item">
               <a class="nav-link" href="contact.html">Contact</a>
             </li>
-            <li class="nav-item ms-lg-3">
-              <button id="darkModeToggle" class="btn btn-outline-secondary">
-                <i class="bi bi-moon"></i>
-              </button>
-            </li>
+            <!-- Dark mode button removed -->
           </ul>
         </div>
       </div>
     </nav>
   </header>
+
   <main class="mt-5 pt-2">
 
+    <!-- Hero Section (Carousel, manual nav disabled, same content on all slides) -->
+    <section id="hero" class="hero">
+      <div
+        id="heroCarousel"
+        class="carousel slide carousel-fade"
+        data-bs-ride="carousel"
+        data-bs-interval="6000"
+        data-bs-touch="false"
+        data-bs-keyboard="false"
+        data-bs-pause="false"
+      >
+        <div class="carousel-inner">
 
- <!-- Hero Section (Carousel, manual nav disabled, same content on all slides) -->
-<section id="hero" class="hero">
-  <div
-    id="heroCarousel"
-    class="carousel slide carousel-fade"
-    data-bs-ride="carousel"
-    data-bs-interval="6000"
-    data-bs-touch="false"
-    data-bs-keyboard="false"
-    data-bs-pause="false"
-  >
-    <div class="carousel-inner">
+          <!-- Slide 1 -->
+          <div class="carousel-item active hero-slide"
+               style="background-image:
+                 linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.7)),
+                 url('assets/img/IMG_6178.jpg');">
+            <div class="container d-flex align-items-center justify-content-center min-vh-100">
+              <div class="row justify-content-center w-100">
+                <div class="col-lg-10 text-center" data-aos="fade-up">
+                  <h1 class="mb-3 main-title">Empowering the Next Generation of Innovators in Sri Lanka</h1>
+                  <p class="mb-4">
+                    Nenasa is transforming STEM education through volunteer based learning <br>
+                    experiences that inspire curiosity and build future ready skills.
+                  </p>
 
-      <!-- Slide 1 -->
-      <div class="carousel-item active hero-slide"
-           style="background-image:
-             linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.7)),
-             url('assets/img/IMG_6178.jpg');">
-        <div class="container d-flex align-items-center justify-content-center min-vh-100">
-          <div class="row justify-content-center w-100">
-            <div class="col-lg-10 text-center" data-aos="fade-up">
-              <h1 class="mb-3 main-title">Empowering the Next Generation of Innovators in Sri Lanka</h1>
-              <p class="mb-4">
-                Nenasa is transforming STEM education through volunteer-driven learning <br>
-                experiences that inspire curiosity and build future-ready skills.
-              </p>
-
-              <!-- Overall Stats -->
-              <div class="row g-4 mt-5 justify-content-center" data-aos="fade-up" data-aos-delay="150">
-                <!-- Stat 1 -->
-                <div class="col-12 col-sm-6 col-xl-2">
-                  <div class="stat-box h-100 p-4 text-center">
-                    <div class="stat-number" data-target="20" data-suffix="+">0</div>
-                    <p class="stat-text mb-0">Interactive STEM sessions</p>
+                  <!-- Overall Stats -->
+                  <div class="row g-4 mt-5 justify-content-center" data-aos="fade-up" data-aos-delay="150">
+                    <!-- Stat 1 -->
+                    <div class="col-12 col-sm-6 col-xl-2">
+                      <div class="stat-box h-100 p-4 text-center">
+                        <div class="stat-number" data-target="20" data-suffix="+">0</div>
+                        <p class="stat-text mb-0">STEM sessions</p>
+                      </div>
+                    </div>
+                    <!-- Stat 2 -->
+                    <div class="col-12 col-sm-6 col-xl-2">
+                      <div class="stat-box h-100 p-4 text-center">
+                        <div class="stat-number" data-target="3000" data-suffix="+">0</div>
+                        <p class="stat-text mb-0">Students Engaged</p>
+                      </div>
+                    </div>
+                    <!-- Stat 3 -->
+                    <div class="col-12 col-sm-6 col-xl-2">
+                      <div class="stat-box h-100 p-4 text-center">
+                        <div class="stat-number" data-target="10" data-suffix="+">0</div>
+                        <p class="stat-text mb-0">Partnered Institutions</p>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <!-- Stat 2 -->
-                <div class="col-12 col-sm-6 col-xl-2">
-                  <div class="stat-box h-100 p-4 text-center">
-                    <div class="stat-number" data-target="3000" data-suffix="+">0</div>
-                    <p class="stat-text mb-0">Students Engaged</p>
-                  </div>
-                </div>
-                <!-- Stat 3 -->
-                <div class="col-12 col-sm-6 col-xl-2">
-                  <div class="stat-box h-100 p-4 text-center">
-                    <div class="stat-number" data-target="30" data-suffix="+">0</div>
-                    <p class="stat-text mb-0">Partnered Institutions</p>
-                  </div>
+                  <!-- /Overall Stats -->
                 </div>
               </div>
-              <!-- /Overall Stats -->
             </div>
           </div>
-        </div>
-      </div>
 
-      <!-- Slide 2 (same content) -->
-      <div class="carousel-item hero-slide"
-           style="background-image:
-             linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.7)),
-             url('assets/img/IMG_2899.jpg');">
-        <div class="container d-flex align-items-center justify-content-center min-vh-100">
-          <div class="row justify-content-center w-100">
-            <div class="col-lg-10 text-center" data-aos="fade-up">
-              <h1 class="mb-3 main-title">Empowering the Next Generation of Innovators in Sri Lanka</h1>
-              <p class="mb-4">
-                Nenasa is transforming STEM education through volunteer-driven learning <br>
-                experiences that inspire curiosity and build future-ready skills.
-              </p>
+          <!-- Slide 2 (same content) -->
+          <div class="carousel-item hero-slide"
+               style="background-image:
+                 linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.7)),
+                 url('assets/img/IMG_2899.jpg');">
+            <div class="container d-flex align-items-center justify-content-center min-vh-100">
+              <div class="row justify-content-center w-100">
+                <div class="col-lg-10 text-center" data-aos="fade-up">
+                  <h1 class="mb-3 main-title">Empowering the Next Generation of Innovators in Sri Lanka</h1>
+                  <p class="mb-4">
+                    Nenasa is transforming STEM education through volunteer based learning <br>
+                    experiences that inspire curiosity and build future ready skills.
+                  </p>
 
-              <!-- Overall Stats -->
-              <div class="row g-4 mt-5 justify-content-center" data-aos="fade-up" data-aos-delay="150">
-                <!-- Stat 1 -->
-                <div class="col-12 col-sm-6 col-xl-2">
-                  <div class="stat-box h-100 p-4 text-center">
-                    <div class="stat-number" data-target="20" data-suffix="+">0</div>
-                    <p class="stat-text mb-0">Interactive STEM sessions</p>
+                  <!-- Overall Stats -->
+                  <div class="row g-4 mt-5 justify-content-center" data-aos="fade-up" data-aos-delay="150">
+                    <!-- Stat 1 -->
+                    <div class="col-12 col-sm-6 col-xl-2">
+                      <div class="stat-box h-100 p-4 text-center">
+                        <div class="stat-number" data-target="20" data-suffix="+">0</div>
+                        <p class="stat-text mb-0">STEM sessions</p>
+                      </div>
+                    </div>
+                    <!-- Stat 2 -->
+                    <div class="col-12 col-sm-6 col-xl-2">
+                      <div class="stat-box h-100 p-4 text-center">
+                        <div class="stat-number" data-target="3000" data-suffix="+">0</div>
+                        <p class="stat-text mb-0">Students Engaged</p>
+                      </div>
+                    </div>
+                    <!-- Stat 3 -->
+                    <div class="col-12 col-sm-6 col-xl-2">
+                      <div class="stat-box h-100 p-4 text-center">
+                        <div class="stat-number" data-target="10" data-suffix="+">0</div>
+                        <p class="stat-text mb-0">Partnered Institutions</p>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <!-- Stat 2 -->
-                <div class="col-12 col-sm-6 col-xl-2">
-                  <div class="stat-box h-100 p-4 text-center">
-                    <div class="stat-number" data-target="3000" data-suffix="+">0</div>
-                    <p class="stat-text mb-0">Students Engaged</p>
-                  </div>
-                </div>
-                <!-- Stat 3 -->
-                <div class="col-12 col-sm-6 col-xl-2">
-                  <div class="stat-box h-100 p-4 text-center">
-                    <div class="stat-number" data-target="30" data-suffix="+">0</div>
-                    <p class="stat-text mb-0">Partnered Institutions</p>
-                  </div>
+                  <!-- /Overall Stats -->
                 </div>
               </div>
-              <!-- /Overall Stats -->
             </div>
           </div>
-        </div>
-      </div>
 
-      <!-- Slide 3 (same content) -->
-      <div class="carousel-item hero-slide"
-           style="background-image:
-             linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.7)),
-             url('assets/img/teach.jpg');">
-        <div class="container d-flex align-items-center justify-content-center min-vh-100">
-          <div class="row justify-content-center w-100">
-            <div class="col-lg-10 text-center" data-aos="fade-up">
-              <h1 class="mb-3 main-title">Empowering the Next Generation of Innovators in Sri Lanka</h1>
-              <p class="mb-4">
-                Nenasa is transforming STEM education through volunteer-driven learning <br>
-                experiences that inspire curiosity and build future-ready skills.
-              </p>
+          <!-- Slide 3 (same content) -->
+          <div class="carousel-item hero-slide"
+               style="background-image:
+                 linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.7)),
+                 url('assets/img/teach.jpg');">
+            <div class="container d-flex align-items-center justify-content-center min-vh-100">
+              <div class="row justify-content-center w-100">
+                <div class="col-lg-10 text-center" data-aos="fade-up">
+                  <h1 class="mb-3 main-title">Empowering the Next Generation of Innovators in Sri Lanka</h1>
+                  <p class="mb-4">
+                    Nenasa is transforming STEM education through volunteer based learning <br>
+                    experiences that inspire curiosity and build future ready skills.
+                  </p>
 
-              <!-- Overall Stats -->
-              <div class="row g-4 mt-5 justify-content-center" data-aos="fade-up" data-aos-delay="150">
-                <!-- Stat 1 -->
-                <div class="col-12 col-sm-6 col-xl-2">
-                  <div class="stat-box h-100 p-4 text-center">
-                    <div class="stat-number" data-target="20" data-suffix="+">0</div>
-                    <p class="stat-text mb-0">Interactive STEM sessions</p>
+                  <!-- Overall Stats -->
+                  <div class="row g-4 mt-5 justify-content-center" data-aos="fade-up" data-aos-delay="150">
+                    <!-- Stat 1 -->
+                    <div class="col-12 col-sm-6 col-xl-2">
+                      <div class="stat-box h-100 p-4 text-center">
+                        <div class="stat-number" data-target="20" data-suffix="+">0</div>
+                        <p class="stat-text mb-0">STEM sessions</p>
+                      </div>
+                    </div>
+                    <!-- Stat 2 -->
+                    <div class="col-12 col-sm-6 col-xl-2">
+                      <div class="stat-box h-100 p-4 text-center">
+                        <div class="stat-number" data-target="3000" data-suffix="+">0</div>
+                        <p class="stat-text mb-0">Students Engaged</p>
+                      </div>
+                    </div>
+                    <!-- Stat 3 -->
+                    <div class="col-12 col-sm-6 col-xl-2">
+                      <div class="stat-box h-100 p-4 text-center">
+                        <div class="stat-number" data-target="10" data-suffix="+">0</div>
+                        <p class="stat-text mb-0">Partnered Institutions</p>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <!-- Stat 2 -->
-                <div class="col-12 col-sm-6 col-xl-2">
-                  <div class="stat-box h-100 p-4 text-center">
-                    <div class="stat-number" data-target="3000" data-suffix="+">0</div>
-                    <p class="stat-text mb-0">Students Engaged</p>
-                  </div>
-                </div>
-                <!-- Stat 3 -->
-                <div class="col-12 col-sm-6 col-xl-2">
-                  <div class="stat-box h-100 p-4 text-center">
-                    <div class="stat-number" data-target="30" data-suffix="+">0</div>
-                    <p class="stat-text mb-0">Partnered Institutions</p>
-                  </div>
+                  <!-- /Overall Stats -->
                 </div>
               </div>
-              <!-- /Overall Stats -->
             </div>
           </div>
-        </div>
-      </div>
 
-    </div>
-    <!-- No indicators or controls -->
-  </div>
-</section>
+        </div>
+        <!-- No indicators or controls -->
+      </div>
+    </section>
 
     <!-- Why It Matters Section -->
     <section id="why" class="py-5 bg-light">
@@ -480,7 +404,7 @@
               <div class="mb-3">
                 <i class="bi bi-lightbulb fs-1"></i>
               </div>
-              <h5 class="fw-bold">Hands‑On STEM Learning</h5>
+              <h5 class="fw-bold">Hands-On STEM Learning</h5>
               <p>By delivering interactive workshops and real-world tech experiences, we sparks curiosity and builds practical skills in students across Sri Lanka</p>
             </div>
           </div>
@@ -489,7 +413,7 @@
               <div class="mb-3">
                 <i class="bi bi-people fs-1"></i>
               </div>
-              <h5 class="fw-bold">Volunteer‑Driven Impact</h5>
+              <h5 class="fw-bold">Volunteer-Driven Impact</h5>
               <p>With a passionate volunteer base, Nenasa builds scalable solutions, empowering communities and fostering a love for learning that lasts</p>
             </div>
           </div>
@@ -529,54 +453,42 @@
     </section>
 
   </main>
+
   <!-- Footer -->
   <footer class="text-center pt-4 pb-4">
     <div class="container">
-      <!-- Logos row: partner - main - partner -->
       <div class="d-flex justify-content-center align-items-center gap-4 flex-wrap mb-3">
-        <!-- Partner (left) -->
-        <img src="assets/img/nenasa_Logo.png" alt="Partner logo 1"
-            class="img-fluid" style="height:36px" loading="lazy">
-        <!-- Main site logo (center) -->
-        <img src="assets/img/SIGHT-logo.png" alt="Main site logo"
-            class="img-fluid" style="height:48px" loading="lazy">
-        <!-- Partner (right) -->
-        <img src="assets/img/IEEE-SL.png" alt="Partner logo 2"
-            class="img-fluid" style="height:36px" loading="lazy">
+        <img src="assets/img/nenasa_Logo.png" alt="Partner logo 1" class="img-fluid" style="height:36px" loading="lazy">
+        <img src="assets/img/SIGHT-logo.png" alt="Main site logo" class="img-fluid" style="height:48px" loading="lazy">
+        <img src="assets/img/IEEE-SL.png" alt="Partner logo 2" class="img-fluid" style="height:36px" loading="lazy">
       </div>
 
-      <!-- Social links -->
       <ul class="list-unstyled d-flex justify-content-center gap-3 fs-4 mb-3">
         <li>
-          <a href="https://www.facebook.com/share/1HcgRAAKkG/" target="_blank" rel="noopener"
-            class="text-decoration-none text-body" aria-label="Facebook">
+          <a href="https://www.facebook.com/share/1HcgRAAKkG/" target="_blank" rel="noopener" class="text-decoration-none text-body" aria-label="Facebook">
             <i class="bi bi-facebook"></i>
           </a>
         </li>
         <li>
-          <a href="https://www.instagram.com/ieeenenasa?igsh=cmxsMmJudm5hamdl" target="_blank" rel="noopener"
-            class="text-decoration-none text-body" aria-label="Instagram">
+          <a href="https://www.instagram.com/ieeenenasa?igsh=cmxsMmJudm5hamdl" target="_blank" rel="noopener" class="text-decoration-none text-body" aria-label="Instagram">
             <i class="bi bi-instagram"></i>
           </a>
         </li>
         <li>
-          <a href="https://www.linkedin.com/company/ieee-nenasa/" target="_blank" rel="noopener"
-            class="text-decoration-none text-body" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/company/ieee-nenasa/" target="_blank" rel="noopener" class="text-decoration-none text-body" aria-label="LinkedIn">
             <i class="bi bi-linkedin"></i>
           </a>
         </li>
         <li>
-          <a href="contact.html"
-            class="text-decoration-none text-body" aria-label="Email">
+          <a href="contact.html" class="text-decoration-none text-body" aria-label="Email">
             <i class="bi bi-envelope"></i>
           </a>
         </li>
       </ul>
 
-      <!-- Copyright / claims -->
       <p class="mb-1 small">&copy; <span id="year"></span> IEEE Sri Lanka Section. All rights reserved.</p>
       <p class="mb-0 small text-muted">
-        Design & Developed by Nenasa Project
+        Design & Developed by Nenasa Team
       </p>
     </div>
   </footer>
@@ -588,69 +500,49 @@
     // Set current year in footer
     document.getElementById('year').textContent = new Date().getFullYear();
     // Initialize AOS for animations
-    AOS.init({
-      once: true
-    });
-    // Dark mode toggle logic
-    const toggleBtn = document.getElementById('darkModeToggle');
-    const body = document.body;
-    const savedTheme = localStorage.getItem('learnee-theme');
-    if (savedTheme === 'dark') {
-      body.classList.add('dark-mode');
-      toggleBtn.innerHTML = '<i class="bi bi-sun"></i>';
-    }
-    toggleBtn.addEventListener('click', () => {
-      body.classList.toggle('dark-mode');
-      if (body.classList.contains('dark-mode')) {
-        toggleBtn.innerHTML = '<i class="bi bi-sun"></i>';
-        localStorage.setItem('learnee-theme', 'dark');
-      } else {
-        toggleBtn.innerHTML = '<i class="bi bi-moon"></i>';
-        localStorage.setItem('learnee-theme', 'light');
-      }
-    });
+    AOS.init({ once: true });
   </script>
+
   <script>
-  (function () {
-    const format = new Intl.NumberFormat();
+    (function () {
+      const format = new Intl.NumberFormat();
 
-    function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+      function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
 
-    function animateCounter(el) {
-      const target = parseInt(el.dataset.target || "0", 10);
-      const suffix = el.dataset.suffix || "";
-      const duration = parseInt(el.dataset.duration || "1500", 10);
+      function animateCounter(el) {
+        const target = parseInt(el.dataset.target || "0", 10);
+        const suffix = el.dataset.suffix || "";
+        const duration = parseInt(el.dataset.duration || "1500", 10);
 
-      const startTime = performance.now();
+        const startTime = performance.now();
 
-      function tick(now) {
-        const progress = Math.min((now - startTime) / duration, 1);
-        const eased = easeOutCubic(progress);
-        const value = Math.floor(target * eased);
-        el.textContent = format.format(value) + suffix;
+        function tick(now) {
+          const progress = Math.min((now - startTime) / duration, 1);
+          const eased = easeOutCubic(progress);
+          const value = Math.floor(target * eased);
+          el.textContent = format.format(value) + suffix;
 
-        if (progress < 1) requestAnimationFrame(tick);
+          if (progress < 1) requestAnimationFrame(tick);
+        }
+
+        requestAnimationFrame(tick);
       }
 
-      requestAnimationFrame(tick);
-    }
+      const counters = document.querySelectorAll(".stat-number");
 
-    const counters = document.querySelectorAll(".stat-number");
+      // Trigger on scroll into view
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !entry.target.dataset.counted) {
+            entry.target.dataset.counted = "true"; // run once
+            animateCounter(entry.target);
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.4 });
 
-    // Trigger on scroll into view
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting && !entry.target.dataset.counted) {
-          entry.target.dataset.counted = "true"; // run once
-          animateCounter(entry.target);
-          io.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.4 });
-
-    counters.forEach((el) => io.observe(el));
-  })();
+      counters.forEach((el) => io.observe(el));
+    })();
   </script>
-
 </body>
 </html>

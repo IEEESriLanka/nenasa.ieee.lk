@@ -14,50 +14,29 @@
     :root {
       --bg-light: #ffffff;
       --text-light: #212529;
-      --bg-dark: #121212;
-      --text-dark: #f8f9fa;
       --card-bg-light: #ffffff;
-      --card-bg-dark: #1e1e1e;
       --primary: #0066cc;
     }
+
     @media (min-width: 992px) {
       header {
         padding-left: 2%;
         padding-right: 2%;
       }
     }
+
     body {
       font-family: 'Poppins', sans-serif;
       background-color: var(--bg-light);
       color: var(--text-light);
       transition: background-color 0.3s, color 0.3s;
     }
-    body.dark-mode {
-      background-color: var(--bg-dark);
-      color: var(--text-dark);
-    }
-    body.dark-mode .navbar {
-      background-color: var(--bg-dark) !important;
-    }
-    body.dark-mode .navbar .nav-link,
-    body.dark-mode .navbar .navbar-brand {
-      color: var(--text-dark) !important;
-    }
-    body.dark-mode .card {
-      background-color: var(--card-bg-dark);
-      color: var(--text-dark);
-    }
-    body.dark-mode .collapse .card-body {
-      background-color: var(--card-bg-dark);
-    }
-    body.dark-mode footer {
-      background-color: var(--bg-dark);
-      color: var(--text-dark);
-    }
+
     header {
       background-color: var(--bg-light);
       transition: background-color 0.3s;
     }
+
     .navbar-brand {
       background-image: url('/assets/img/nenasa_Logo.png');
       width: 120px;
@@ -65,6 +44,7 @@
       background-size: contain;
       background-repeat: no-repeat;
     }
+
     .card-hover {
       transition: transform 0.3s, box-shadow 0.3s;
     }
@@ -72,9 +52,9 @@
       transform: translateY(-5px);
       box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     }
-    .overlay-toggle {
-      cursor: pointer;
-    }
+
+    .overlay-toggle { cursor: pointer; }
+
     /* Key-value rows (no bullets) */
     .meta-row {
       display: flex;
@@ -92,6 +72,7 @@
       font-size: .9rem;
       font-weight: 500;
     }
+
     html { scroll-behavior: smooth; }
   </style>
 </head>
@@ -121,11 +102,7 @@
             <li class="nav-item">
               <a class="nav-link" href="contact.html">Contact</a>
             </li>
-            <li class="nav-item ms-lg-3">
-              <button id="darkModeToggle" class="btn btn-outline-secondary">
-                <i class="bi bi-moon"></i>
-              </button>
-            </li>
+            <!-- Dark mode button was here — removed -->
           </ul>
         </div>
       </div>
@@ -152,40 +129,30 @@
     <div class="container">
       <!-- Logos row: partner - main - partner -->
       <div class="d-flex justify-content-center align-items-center gap-4 flex-wrap mb-3">
-        <!-- Partner (left) -->
-        <img src="assets/img/nenasa_Logo.png" alt="Partner logo 1"
-            class="img-fluid" style="height:36px" loading="lazy">
-        <!-- Main site logo (center) -->
-        <img src="assets/img/SIGHT-logo.png" alt="Main site logo"
-            class="img-fluid" style="height:48px" loading="lazy">
-        <!-- Partner (right) -->
-        <img src="assets/img/IEEE-SL.png" alt="Partner logo 2"
-            class="img-fluid" style="height:36px" loading="lazy">
+        <img src="assets/img/nenasa_Logo.png" alt="Partner logo 1" class="img-fluid" style="height:36px" loading="lazy">
+        <img src="assets/img/SIGHT-logo.png" alt="Main site logo" class="img-fluid" style="height:48px" loading="lazy">
+        <img src="assets/img/IEEE-SL.png" alt="Partner logo 2" class="img-fluid" style="height:36px" loading="lazy">
       </div>
 
       <!-- Social links -->
       <ul class="list-unstyled d-flex justify-content-center gap-3 fs-4 mb-3">
         <li>
-          <a href="https://www.facebook.com/share/1HcgRAAKkG/" target="_blank" rel="noopener"
-            class="text-decoration-none text-body" aria-label="Facebook">
+          <a href="https://www.facebook.com/share/1HcgRAAKkG/" target="_blank" rel="noopener" class="text-decoration-none text-body" aria-label="Facebook">
             <i class="bi bi-facebook"></i>
           </a>
         </li>
         <li>
-          <a href="https://www.instagram.com/ieeenenasa?igsh=cmxsMmJudm5hamdl" target="_blank" rel="noopener"
-            class="text-decoration-none text-body" aria-label="Instagram">
+          <a href="https://www.instagram.com/ieeenenasa?igsh=cmxsMmJudm5hamdl" target="_blank" rel="noopener" class="text-decoration-none text-body" aria-label="Instagram">
             <i class="bi bi-instagram"></i>
           </a>
         </li>
         <li>
-          <a href="https://www.linkedin.com/company/ieee-nenasa/" target="_blank" rel="noopener"
-            class="text-decoration-none text-body" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/company/ieee-nenasa/" target="_blank" rel="noopener" class="text-decoration-none text-body" aria-label="LinkedIn">
             <i class="bi bi-linkedin"></i>
           </a>
         </li>
         <li>
-          <a href="contact.html"
-            class="text-decoration-none text-body" aria-label="Email">
+          <a href="contact.html" class="text-decoration-none text-body" aria-label="Email">
             <i class="bi bi-envelope"></i>
           </a>
         </li>
@@ -193,9 +160,7 @@
 
       <!-- Copyright / claims -->
       <p class="mb-1 small">&copy; <span id="year"></span> IEEE Sri Lanka Section. All rights reserved.</p>
-      <p class="mb-0 small text-muted">
-        Design & Developed by Nenasa Project
-      </p>
+      <p class="mb-0 small text-muted">Design & Developed by Nenasa Project</p>
     </div>
   </footer>
 
@@ -206,25 +171,6 @@
     // Footer year + AOS
     document.getElementById('year').textContent = new Date().getFullYear();
     AOS.init({ once: true });
-
-    // Theme toggle
-    const toggleBtn = document.getElementById('darkModeToggle');
-    const body = document.body;
-    const savedTheme = localStorage.getItem('learnee-theme');
-    if (savedTheme === 'dark') {
-      body.classList.add('dark-mode');
-      toggleBtn.innerHTML = '<i class="bi bi-sun"></i>';
-    }
-    toggleBtn.addEventListener('click', () => {
-      body.classList.toggle('dark-mode');
-      if (body.classList.contains('dark-mode')) {
-        toggleBtn.innerHTML = '<i class="bi bi-sun"></i>';
-        localStorage.setItem('learnee-theme', 'dark');
-      } else {
-        toggleBtn.innerHTML = '<i class="bi bi-moon"></i>';
-        localStorage.setItem('learnee-theme', 'light');
-      }
-    });
 
     // ----- Dynamic competitions loader -----
     const row = document.getElementById('competitionsRow');

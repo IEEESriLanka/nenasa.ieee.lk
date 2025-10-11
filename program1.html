@@ -24,26 +24,15 @@
       color: var(--text-light);
       transition: background-color 0.3s, color 0.3s;
     }
-    body.dark-mode {
-      background-color: var(--bg-dark);
-      color: var(--text-dark);
+    header {
+      background-color: var(--bg-light);
+      transition: background-color 0.3s;
     }
-    body.dark-mode .navbar {
-      background-color: var(--bg-dark) !important;
-    }
-    body.dark-mode .navbar .nav-link,
-    body.dark-mode .navbar .navbar-brand {
-      color: var(--text-dark) !important;
-    }
-    body.dark-mode .card {
-      background-color: var(--card-bg-dark);
-      color: var(--text-dark);
-    }
-    body.dark-mode .text-muted {
-      color: rgba(248, 249, 250, 0.7) !important;
-    }
-    body.dark-mode .bg-light {
-      background-color: var(--bg-dark) !important;
+    @media (min-width: 992px) {
+      header {
+        padding-left: 2%;
+        padding-right: 2%;
+      }
     }
     .navbar-brand {
       background-image: url('/assets/img/nenasa_Logo.png');
@@ -62,10 +51,6 @@
       background-color: var(--bg-light);
       color: var(--text-light);
       padding: 2rem 0;
-    }
-    body.dark-mode footer {
-      background-color: var(--bg-dark);
-      color: var(--text-dark);
     }
     .hero-section {
       padding: 4rem 0;
@@ -98,11 +83,6 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="contact.html">Contact</a>
-            </li>
-            <li class="nav-item ms-lg-3">
-              <button id="darkModeToggle" class="btn btn-outline-secondary">
-                <i class="bi bi-moon"></i>
-              </button>
             </li>
           </ul>
         </div>
@@ -184,23 +164,6 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
     AOS.init({ once: true });
-    const toggleBtn = document.getElementById('darkModeToggle');
-    const body = document.body;
-    const savedTheme = localStorage.getItem('nenasa-theme');
-    if (savedTheme === 'dark') {
-      body.classList.add('dark-mode');
-      toggleBtn.innerHTML = '<i class="bi bi-sun"></i>';
-    }
-    toggleBtn.addEventListener('click', () => {
-      body.classList.toggle('dark-mode');
-      if (body.classList.contains('dark-mode')) {
-        toggleBtn.innerHTML = '<i class="bi bi-sun"></i>';
-        localStorage.setItem('nenasa-theme', 'dark');
-      } else {
-        toggleBtn.innerHTML = '<i class="bi bi-moon"></i>';
-        localStorage.setItem('nenasa-theme', 'light');
-      }
-    });
   </script>
 </body>
 </html>

@@ -11,47 +11,27 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <style>
-    /* Colour palette and variables reused from home page */
+    /* Clean palette (dark mode removed) */
     :root {
       --bg-light: #ffffff;
       --text-light: #212529;
-      --bg-dark: #121212;
-      --text-dark: #f8f9fa;
       --primary: #0066cc;
       --card-bg-light: #ffffff;
-      --card-bg-dark: #1e1e1e;
     }
+
     body {
       font-family: 'Poppins', sans-serif;
       background-color: var(--bg-light);
       color: var(--text-light);
       transition: background-color 0.3s, color 0.3s;
     }
-    body.dark-mode {
-      background-color: var(--bg-dark);
-      color: var(--text-dark);
-    }
-    body.dark-mode .navbar {
-      background-color: var(--bg-dark) !important;
-    }
-    body.dark-mode .navbar .nav-link,
-    body.dark-mode .navbar .navbar-brand {
-      color: var(--text-dark) !important;
-    }
-    body.dark-mode .bg-light { background-color: var(--bg-dark) !important; }
-    body.dark-mode .bg-white { background-color: var(--bg-dark) !important; }
-    body.dark-mode .card { background-color: var(--card-bg-dark); color: var(--text-dark); }
-    body.dark-mode .text-muted { color: rgba(248, 249, 250, 0.7) !important; }
 
     footer {
       background-color: var(--bg-light);
       color: var(--text-light);
       padding: 2rem 0;
     }
-    body.dark-mode footer {
-      background-color: var(--bg-dark);
-      color: var(--text-dark);
-    }
+
     header {
       background-color: var(--bg-light);
       transition: background-color 0.3s;
@@ -98,7 +78,7 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul class="navbar-nav align-items-lg-center">
             <li class="nav-item">
-              <a class="nav-link active" href="index.html">Home</a>
+              <a class="nav-link" href="index.html">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="competitions.html">Competitions</a>
@@ -112,11 +92,7 @@
             <li class="nav-item">
               <a class="nav-link" href="contact.html">Contact</a>
             </li>
-            <li class="nav-item ms-lg-3">
-              <button id="darkModeToggle" class="btn btn-outline-secondary">
-                <i class="bi bi-moon"></i>
-              </button>
-            </li>
+            <!-- Dark mode button removed -->
           </ul>
         </div>
       </div>
@@ -198,84 +174,65 @@
     document.getElementById('year').textContent = new Date().getFullYear();
     AOS.init({ once: true });
 
-    // Dark mode toggle (kept from your page)
-    const toggleBtn = document.getElementById('darkModeToggle');
-    const body = document.body;
-    const savedTheme = localStorage.getItem('learnee-theme');
-    if (savedTheme === 'dark') {
-      body.classList.add('dark-mode');
-      toggleBtn.innerHTML = '<i class="bi bi-sun"></i>';
-    }
-    toggleBtn.addEventListener('click', () => {
-      body.classList.toggle('dark-mode');
-      if (body.classList.contains('dark-mode')) {
-        toggleBtn.innerHTML = '<i class="bi bi-sun"></i>';
-        localStorage.setItem('learnee-theme', 'dark');
-      } else {
-        toggleBtn.innerHTML = '<i class="bi bi-moon"></i>';
-        localStorage.setItem('learnee-theme', 'light');
-      }
-    });
+    const escapeHTML = (s = '') =>
+      s.replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 
-  const escapeHTML = (s = '') =>
-    s.replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+    function cardHTML(p, i) {
+      const delay = 100 * (i + 1);
+      const title = escapeHTML(p.title || 'Untitled Program');
+      const desc = escapeHTML(p.description || '');
+      const img = p.image || 'assets/img/placeholder.jpg';
+      const link = p.link || '#';
+      const alt = escapeHTML(p.alt || p.title || 'Program image');
 
-  function cardHTML(p, i) {
-    const delay = 100 * (i + 1);
-    const title = escapeHTML(p.title || 'Untitled Program');
-    const desc = escapeHTML(p.description || '');
-    const img = p.image || 'assets/img/placeholder.jpg';
-    const link = p.link || '#';
-    const alt = escapeHTML(p.alt || p.title || 'Program image');
-
-    return `
-      <div class="col-md-4" data-aos="fade-up" data-aos-delay="${delay}">
-        <a href="${link}" class="text-decoration-none" aria-label="${title}">
-          <div class="card card-hover program-card h-100">
-            <img src="${img}" alt="${alt}" class="card-img-top" loading="lazy"
-                 onerror="this.onerror=null;this.src='assets/img/placeholder.jpg';">
-            <div class="overlay">
-              <p class="mb-0">${desc}</p>
+      return `
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="${delay}">
+          <a href="${link}" class="text-decoration-none" aria-label="${title}">
+            <div class="card card-hover program-card h-100">
+              <img src="${img}" alt="${alt}" class="card-img-top" loading="lazy"
+                   onerror="this.onerror=null;this.src='assets/img/placeholder.jpg';">
+              <div class="overlay">
+                <p class="mb-0">${desc}</p>
+              </div>
+              <div class="card-body text-center">
+                <h5 class="fw-bold mb-0">${title}</h5>
+              </div>
             </div>
-            <div class="card-body text-center">
-              <h5 class="fw-bold mb-0">${title}</h5>
-            </div>
-          </div>
-        </a>
-      </div>
-    `;
-  }
-
-  function renderInto(containerSel, statusSel, list) {
-    const grid = document.querySelector(containerSel);
-    const statusEl = document.querySelector(statusSel);
-    if (!Array.isArray(list) || list.length === 0) {
-      grid.innerHTML = '';
-      statusEl.textContent = 'No items yet.';
-      return;
+          </a>
+        </div>
+      `;
     }
-    grid.innerHTML = list.map((p, i) => cardHTML(p, i)).join('');
-    statusEl.textContent = '';
-    if (window.AOS && typeof AOS.refresh === 'function') AOS.refresh();
-  }
 
-  async function loadPrograms(jsonPath, containerSel, statusSel) {
-    try {
-      const res = await fetch(jsonPath, { cache: 'no-store' });
-      if (!res.ok) throw new Error('HTTP ' + res.status);
-      const data = await res.json();
-      renderInto(containerSel, statusSel, data);
-    } catch (e) {
-      console.error(e);
+    function renderInto(containerSel, statusSel, list) {
+      const grid = document.querySelector(containerSel);
       const statusEl = document.querySelector(statusSel);
-      statusEl.classList.add('text-danger');
-      statusEl.textContent = 'Could not load items.';
+      if (!Array.isArray(list) || list.length === 0) {
+        grid.innerHTML = '';
+        statusEl.textContent = 'No items yet.';
+        return;
+      }
+      grid.innerHTML = list.map((p, i) => cardHTML(p, i)).join('');
+      statusEl.textContent = '';
+      if (window.AOS && typeof AOS.refresh === 'function') AOS.refresh();
     }
-  }
 
-  // Current + 2024
-  loadPrograms('programs.json', '#programGrid', '#programStatus');
-  loadPrograms('programs-2024.json', '#programGrid2024', '#programStatus2024');
-</script>
+    async function loadPrograms(jsonPath, containerSel, statusSel) {
+      try {
+        const res = await fetch(jsonPath, { cache: 'no-store' });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const data = await res.json();
+        renderInto(containerSel, statusSel, data);
+      } catch (e) {
+        console.error(e);
+        const statusEl = document.querySelector(statusSel);
+        statusEl.classList.add('text-danger');
+        statusEl.textContent = 'Could not load items.';
+      }
+    }
+
+    // Current + 2024
+    loadPrograms('programs.json', '#programGrid', '#programStatus');
+    loadPrograms('programs-2024.json', '#programGrid2024', '#programStatus2024');
+  </script>
 </body>
 </html>

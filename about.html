@@ -27,44 +27,6 @@
       color: var(--text-light);
       transition: background-color 0.3s, color 0.3s;
     }
-    body.dark-mode {
-      background-color: var(--bg-dark);
-      color: var(--text-dark);
-    }
-    body.dark-mode .card {
-      background-color: var(--card-bg-dark);
-      color: var(--text-dark);
-    }
-    body.dark-mode .navbar {
-      background-color: var(--bg-dark) !important;
-    }
-    body.dark-mode .navbar .nav-link,
-    body.dark-mode .navbar .navbar-brand {
-      color: var(--text-dark) !important;
-    }
-    /* Override Bootstraps light backgrounds in dark mode to maintain contrast */
-    body.dark-mode .bg-light {
-      background-color: var(--bg-dark) !important;
-    }
-    body.dark-mode .bg-white {
-      background-color: var(--bg-dark) !important;
-    }
-    body.dark-mode .text-dark {
-      color: var(--text-dark) !important;
-    }
-    /* Ensure muted text remains legible in dark mode */
-    body.dark-mode .text-muted {
-      color: rgba(248, 249, 250, 0.7) !important;
-    }
-    /* Form controls dark mode styling (copied from home page) */
-    body.dark-mode .form-control {
-      background-color: #2a2a2a;
-      color: var(--text-dark);
-      border-color: #555;
-    }
-    body.dark-mode .form-control::placeholder {
-      color: #8a8a8a;
-    }
     header {
       background-color: var(--bg-light);
       transition: background-color 0.3s;
@@ -97,10 +59,6 @@
       background-color: var(--bg-light);
       color: var(--text-light);
       padding: 2rem 0;
-    }
-    body.dark-mode footer {
-      background-color: var(--bg-dark);
-      color: var(--text-dark);
     }
     /* Smooth scroll */
     html {
@@ -148,11 +106,6 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="contact.html">Contact</a>
-            </li>
-            <li class="nav-item ms-lg-3">
-              <button id="darkModeToggle" class="btn btn-outline-secondary">
-                <i class="bi bi-moon"></i>
-              </button>
             </li>
           </ul>
         </div>
@@ -431,24 +384,6 @@
     document.getElementById('year').textContent = new Date().getFullYear();
     // Initialise AOS animations
     AOS.init({ once: true });
-    // Dark mode toggle logic
-    const toggleBtn = document.getElementById('darkModeToggle');
-    const body = document.body;
-    const savedTheme = localStorage.getItem('learnee-theme');
-    if (savedTheme === 'dark') {
-      body.classList.add('dark-mode');
-      toggleBtn.innerHTML = '<i class="bi bi-sun"></i>';
-    }
-    toggleBtn.addEventListener('click', () => {
-      body.classList.toggle('dark-mode');
-      if (body.classList.contains('dark-mode')) {
-        toggleBtn.innerHTML = '<i class="bi bi-sun"></i>';
-        localStorage.setItem('learnee-theme', 'dark');
-      } else {
-        toggleBtn.innerHTML = '<i class="bi bi-moon"></i>';
-        localStorage.setItem('learnee-theme', 'light');
-      }
-    });
   </script>
 </body>
 </html>
