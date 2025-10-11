@@ -97,26 +97,41 @@
       color: var(--text-dark);
     }
     /* Hero styles */
-    .hero {
-      /* Use a vibrant gradient for the hero instead of an external image */
-      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), /* dark overlay */
-    url('assets/img/background-wall3.jpg');
-      background-position: center;
-      background-repeat: no-repeat;
-      color: #fff;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      position: relative;
-      z-index: 0;
-    }
-    body.dark-mode .hero {
-      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), /* dark overlay */
-    url('assets/img/background-wall3.jpg');
-      background-position: center;
-      background-repeat: no-repeat;
 
+    .hero { background: none !important; }
+
+    .hero-slide{
+      min-height:100vh;
+      background-size:cover;
+      background-position:center;
+      background-repeat:no-repeat;
+      color:#fff;
+      display:flex;
+      align-items:center;
     }
+
+/* Safety: in case any controls/indicators remain in DOM from previous code */
+.carousel-control-prev,
+.carousel-control-next,
+.carousel-indicators { display:none !important; }
+
+
+    /* Make indicators visible on dark images */
+    #heroCarousel .carousel-indicators [data-bs-target] {
+      background-color: rgba(255,255,255,0.8);
+    }
+
+    /* Improve control icons visibility */
+    #heroCarousel .carousel-control-prev-icon,
+    #heroCarousel .carousel-control-next-icon {
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,.4));
+    }
+
+    /* Dark mode: nothing special needed because slides are already darkened,
+      but keep parity with your theme overrides */
+    body.dark-mode .hero { background: none !important; }
+
+
     .hero h1 {
       font-weight: 600;
       font-size: 50px;
@@ -292,52 +307,157 @@
     </nav>
   </header>
   <main class="mt-5 pt-2">
-  <!-- Hero Section -->
-  <section id="hero" class="hero">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-10 text-center" data-aos="fade-up">
-          <h1 class="mb-3 main-title">Empowering the Next Generation of Innovators in Sri Lanka</h1>
-          <p class="mb-4">
-            ADS is transforming STEM education through volunteer-driven learning <br>experiences that inspire curiosity and build future-ready skills.
-          </p>
 
-          <!-- Overall Stats -->
-          <div class="row g-4 mt-5 justify-content-center" data-aos="fade-up" data-aos-delay="150">
-            <!-- Stat 1 -->
-            <div class="col-12 col-sm-6 col-xl-2">
-              <div class="stat-box h-100 p-4 text-center">
-                <div class="stat-number" data-target="20" data-suffix="+">0</div>
-                <p class="stat-text mb-0">
-                Interactive STEM sessions
-                </p>
+
+ <!-- Hero Section (Carousel, manual nav disabled, same content on all slides) -->
+<section id="hero" class="hero">
+  <div
+    id="heroCarousel"
+    class="carousel slide carousel-fade"
+    data-bs-ride="carousel"
+    data-bs-interval="6000"
+    data-bs-touch="false"
+    data-bs-keyboard="false"
+    data-bs-pause="false"
+  >
+    <div class="carousel-inner">
+
+      <!-- Slide 1 -->
+      <div class="carousel-item active hero-slide"
+           style="background-image:
+             linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.7)),
+             url('assets/img/IMG_6178.jpg');">
+        <div class="container d-flex align-items-center justify-content-center min-vh-100">
+          <div class="row justify-content-center w-100">
+            <div class="col-lg-10 text-center" data-aos="fade-up">
+              <h1 class="mb-3 main-title">Empowering the Next Generation of Innovators in Sri Lanka</h1>
+              <p class="mb-4">
+                Nenasa is transforming STEM education through volunteer-driven learning <br>
+                experiences that inspire curiosity and build future-ready skills.
+              </p>
+
+              <!-- Overall Stats -->
+              <div class="row g-4 mt-5 justify-content-center" data-aos="fade-up" data-aos-delay="150">
+                <!-- Stat 1 -->
+                <div class="col-12 col-sm-6 col-xl-2">
+                  <div class="stat-box h-100 p-4 text-center">
+                    <div class="stat-number" data-target="20" data-suffix="+">0</div>
+                    <p class="stat-text mb-0">Interactive STEM sessions</p>
+                  </div>
+                </div>
+                <!-- Stat 2 -->
+                <div class="col-12 col-sm-6 col-xl-2">
+                  <div class="stat-box h-100 p-4 text-center">
+                    <div class="stat-number" data-target="3000" data-suffix="+">0</div>
+                    <p class="stat-text mb-0">Students Engaged</p>
+                  </div>
+                </div>
+                <!-- Stat 3 -->
+                <div class="col-12 col-sm-6 col-xl-2">
+                  <div class="stat-box h-100 p-4 text-center">
+                    <div class="stat-number" data-target="30" data-suffix="+">0</div>
+                    <p class="stat-text mb-0">Partnered Institutions</p>
+                  </div>
+                </div>
               </div>
-            </div>
-            <!-- Stat 2 -->
-            <div class="col-12 col-sm-6 col-xl-2">
-              <div class="stat-box h-100 p-4 text-center">
-                <div class="stat-number" data-target="3000" data-suffix="+">0</div>
-                <p class="stat-text mb-0">
-                  Students Engaged
-                </p>
-              </div>
-            </div>
-            <!-- Stat 3 -->
-            <div class="col-12 col-sm-6 col-xl-2">
-              <div class="stat-box h-100 p-4 text-center">
-                <div class="stat-number" data-target="30" data-suffix="+">0</div>
-                <p class="stat-text mb-0">
-                  Partnered Institutions
-                </p>
-              </div>
+              <!-- /Overall Stats -->
             </div>
           </div>
-          <!-- /Overall Stats -->
         </div>
       </div>
-    </div>
-  </section>
 
+      <!-- Slide 2 (same content) -->
+      <div class="carousel-item hero-slide"
+           style="background-image:
+             linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.7)),
+             url('assets/img/IMG_2899.jpg');">
+        <div class="container d-flex align-items-center justify-content-center min-vh-100">
+          <div class="row justify-content-center w-100">
+            <div class="col-lg-10 text-center" data-aos="fade-up">
+              <h1 class="mb-3 main-title">Empowering the Next Generation of Innovators in Sri Lanka</h1>
+              <p class="mb-4">
+                Nenasa is transforming STEM education through volunteer-driven learning <br>
+                experiences that inspire curiosity and build future-ready skills.
+              </p>
+
+              <!-- Overall Stats -->
+              <div class="row g-4 mt-5 justify-content-center" data-aos="fade-up" data-aos-delay="150">
+                <!-- Stat 1 -->
+                <div class="col-12 col-sm-6 col-xl-2">
+                  <div class="stat-box h-100 p-4 text-center">
+                    <div class="stat-number" data-target="20" data-suffix="+">0</div>
+                    <p class="stat-text mb-0">Interactive STEM sessions</p>
+                  </div>
+                </div>
+                <!-- Stat 2 -->
+                <div class="col-12 col-sm-6 col-xl-2">
+                  <div class="stat-box h-100 p-4 text-center">
+                    <div class="stat-number" data-target="3000" data-suffix="+">0</div>
+                    <p class="stat-text mb-0">Students Engaged</p>
+                  </div>
+                </div>
+                <!-- Stat 3 -->
+                <div class="col-12 col-sm-6 col-xl-2">
+                  <div class="stat-box h-100 p-4 text-center">
+                    <div class="stat-number" data-target="30" data-suffix="+">0</div>
+                    <p class="stat-text mb-0">Partnered Institutions</p>
+                  </div>
+                </div>
+              </div>
+              <!-- /Overall Stats -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 (same content) -->
+      <div class="carousel-item hero-slide"
+           style="background-image:
+             linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.7)),
+             url('assets/img/teach.jpg');">
+        <div class="container d-flex align-items-center justify-content-center min-vh-100">
+          <div class="row justify-content-center w-100">
+            <div class="col-lg-10 text-center" data-aos="fade-up">
+              <h1 class="mb-3 main-title">Empowering the Next Generation of Innovators in Sri Lanka</h1>
+              <p class="mb-4">
+                Nenasa is transforming STEM education through volunteer-driven learning <br>
+                experiences that inspire curiosity and build future-ready skills.
+              </p>
+
+              <!-- Overall Stats -->
+              <div class="row g-4 mt-5 justify-content-center" data-aos="fade-up" data-aos-delay="150">
+                <!-- Stat 1 -->
+                <div class="col-12 col-sm-6 col-xl-2">
+                  <div class="stat-box h-100 p-4 text-center">
+                    <div class="stat-number" data-target="20" data-suffix="+">0</div>
+                    <p class="stat-text mb-0">Interactive STEM sessions</p>
+                  </div>
+                </div>
+                <!-- Stat 2 -->
+                <div class="col-12 col-sm-6 col-xl-2">
+                  <div class="stat-box h-100 p-4 text-center">
+                    <div class="stat-number" data-target="3000" data-suffix="+">0</div>
+                    <p class="stat-text mb-0">Students Engaged</p>
+                  </div>
+                </div>
+                <!-- Stat 3 -->
+                <div class="col-12 col-sm-6 col-xl-2">
+                  <div class="stat-box h-100 p-4 text-center">
+                    <div class="stat-number" data-target="30" data-suffix="+">0</div>
+                    <p class="stat-text mb-0">Partnered Institutions</p>
+                  </div>
+                </div>
+              </div>
+              <!-- /Overall Stats -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- No indicators or controls -->
+  </div>
+</section>
 
     <!-- Why It Matters Section -->
     <section id="why" class="py-5 bg-light">
