@@ -3,15 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Science Fair – Learnee</title>
-  <!-- Fonts and CSS Frameworks -->
+  <title>Robotics and Arduino Workshop – Nenasa</title>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <style>
-    /* Reuse colour palette and dark mode variables from index */
     :root {
       --bg-light: #ffffff;
       --text-light: #212529;
@@ -26,122 +24,155 @@
       color: var(--text-light);
       transition: background-color 0.3s, color 0.3s;
     }
-    body.dark-mode {
-      background-color: var(--bg-dark);
-      color: var(--text-dark);
+    
+    header {
+      background-color: var(--bg-light);
+      transition: background-color 0.3s;
     }
-    body.dark-mode .navbar {
-      background-color: var(--bg-dark) !important;
+    @media (min-width: 992px) {
+      header {
+        padding-left: 2%;
+        padding-right: 2%;
+      }
     }
-    body.dark-mode .navbar .nav-link,
-    body.dark-mode .navbar .navbar-brand {
-      color: var(--text-dark) !important;
+    .navbar-brand {
+      background-image: url('/assets/img/nenasa_Logo.png');
+      width: 120px;
+      height: 40px;
+      background-size: contain;
+      background-repeat: no-repeat;
     }
-    body.dark-mode .card {
-      background-color: var(--card-bg-dark);
-      color: var(--text-dark);
-    }
-    body.dark-mode .text-muted {
-      color: rgba(248, 249, 250, 0.7) !important;
-    }
-    body.dark-mode .bg-light {
-      background-color: var(--bg-dark) !important;
+    @media (min-width: 992px) {
+    header {
+      padding-left: 2%;
+      padding-right: 2%;
+      }
     }
     footer {
       background-color: var(--bg-light);
       color: var(--text-light);
       padding: 2rem 0;
     }
-    body.dark-mode footer {
-      background-color: var(--bg-dark);
-      color: var(--text-dark);
-    }
     .hero-section {
       padding: 4rem 0;
     }
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
   </style>
 </head>
 <body>
-  <!-- Header with Navigation matching index -->
+  <!-- Header and Navigation -->
   <header class="fixed-top">
     <nav class="navbar navbar-expand-lg navbar-light">
       <div class="container-fluid">
-        <a class="navbar-brand fw-bold" href="index.html">Learnee</a>
+        <a class="navbar-brand" href="#hero"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul class="navbar-nav align-items-lg-center">
-            <!-- Replicate navigation from the home page: Home, Projects, About, Contact -->
-            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="index.html#approach">Projects</a></li>
-            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
-            <li class="nav-item ms-lg-3">
-              <button id="darkModeToggle" class="btn btn-outline-secondary"><i class="bi bi-moon"></i></button>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="competitions.html">Competitions</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="programs.html">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <!-- chng -->
+              <a class="nav-link" href="./contact">Contact</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
   </header>
-  <!-- Main Content -->
   <main class="mt-5 pt-5">
     <section class="hero-section">
       <div class="container">
         <div class="row g-4 align-items-center">
           <div class="col-lg-6" data-aos="fade-right">
-            <h1 class="fw-bold mb-3">Science Fair</h1>
-            <p class="lead">Our Science Fair encourages students to explore scientific concepts through engaging experiments, demonstrations and presentations. Participants showcase their curiosity and understanding by creating and sharing their own discoveries.</p>
+            <h1 class="fw-bold mb-3">Workshop on Basic Electronics</h1><br>
+            <p class="lead">On 15th September 2025, the Light & Circuits Workshop was successfully conducted at Siri Vidyakeerthi Kanishta Vidyalaya, Mirigama. The primary goal of the workshop was to help students understand how electricity flows in simple circuits, recognize the differences between bulbs, LEDs, and resistors, and creatively apply their knowledge to build real-world projects.
+            <br><br>
+            The workshop began with an engaging icebreaker that encouraged students to identify sources of light in everyday life. This discussion introduced the concept of how light is produced and how circuits enable it. Students then learned the basics of electrical circuits by assembling simple loops using batteries, wires, and bulbs. Through experimentation, they observed the importance of closed circuits and how electrical energy powers light.
+            <br><br>
+            In the next segment, students explored LEDs and resistors, discovering how LEDs conserve energy and why resistors are crucial for regulating current flow. They tested different setups to observe variations in brightness and learned about safe circuit design.
+            <br><br>
+            The highlight of the workshop was the “Light-Up Name Badge” activity, where participants applied their knowledge creatively by designing personalized glowing badges using LEDs, copper tape, and coin-cell batteries.
+            <br><br>
+            The session concluded with a reflective discussion reinforcing the key principles of circuits and encouraging students to continue experimenting. The workshop successfully blended creativity and engineering, inspiring young learners to see themselves as future innovators in technology.
+            </p>
           </div>
           <div class="col-lg-6" data-aos="fade-left">
-            <img src="assets/img/program3.png" alt="Science Fair" class="img-fluid rounded">
+            <img src="assets/img/IMG_6198.jpg" alt="Vidyakeerthi1" class="img-fluid rounded">
+            <br><br>
+            <img src="assets/img/IMG_6173.jpg" alt="Vidyakeerthi2" class="img-fluid rounded">
           </div>
         </div>
       </div>
     </section>
   </main>
-  <!-- Footer matching index -->
-  <footer class="text-center">
+  <!-- Footer -->
+  <footer class="text-center pt-4 pb-4">
     <div class="container">
-      <p class="mb-1">&copy; <span id="year"></span> ASD Learnee. All rights reserved.</p>
-      <nav class="d-inline-block">
-        <a href="index.html" class="me-3 text-decoration-none">Home</a>
-        <a href="index.html#approach" class="me-3 text-decoration-none">Projects</a>
-        <a href="about.html" class="me-3 text-decoration-none">About</a>
-        <a href="index.html#contact" class="text-decoration-none">Contact</a>
-      </nav>
+      <!-- Logos row: partner - main - partner -->
+      <div class="d-flex justify-content-center align-items-center gap-4 flex-wrap mb-3">
+        <!-- Partner (left) -->
+        <img src="assets/img/nenasa_Logo.png" alt="Partner logo 1"
+            class="img-fluid" style="height:36px" loading="lazy">
+        <!-- Main site logo (center) -->
+        <img src="assets/img/SIGHT-logo.png" alt="Main site logo"
+            class="img-fluid" style="height:48px" loading="lazy">
+        <!-- Partner (right) -->
+        <img src="assets/img/IEEE-SL.png" alt="Partner logo 2"
+            class="img-fluid" style="height:36px" loading="lazy">
+      </div>
+
+      <!-- Social links -->
+      <ul class="list-unstyled d-flex justify-content-center gap-3 fs-4 mb-3">
+        <li>
+          <a href="https://www.facebook.com/share/1HcgRAAKkG/" target="_blank" rel="noopener"
+            class="text-decoration-none text-body" aria-label="Facebook">
+            <i class="bi bi-facebook"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/ieeenenasa?igsh=cmxsMmJudm5hamdl" target="_blank" rel="noopener"
+            class="text-decoration-none text-body" aria-label="Instagram">
+            <i class="bi bi-instagram"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/company/ieee-nenasa/" target="_blank" rel="noopener"
+            class="text-decoration-none text-body" aria-label="LinkedIn">
+            <i class="bi bi-linkedin"></i>
+          </a>
+        </li>
+        <li>
+          <a href="contact.html"
+            class="text-decoration-none text-body" aria-label="Email">
+            <i class="bi bi-envelope"></i>
+          </a>
+        </li>
+      </ul>
+
+      <!-- Copyright / claims -->
+      <p class="mb-1 small">&copy; <span id="year"></span> IEEE Sri Lanka Section. All rights reserved.</p>
+      <p class="mb-0 small text-muted">
+        Design & Developed by Nenasa Project
+      </p>
     </div>
   </footer>
-  <!-- Scripts: Bootstrap, AOS and dark mode toggle JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
-    // Set dynamic year in footer
     document.getElementById('year').textContent = new Date().getFullYear();
-    // Initialise animations
     AOS.init({ once: true });
-    // Dark mode toggle functionality
-    const toggleBtn = document.getElementById('darkModeToggle');
-    const body = document.body;
-    const savedTheme = localStorage.getItem('learnee-theme');
-    if (savedTheme === 'dark') {
-      body.classList.add('dark-mode');
-      toggleBtn.innerHTML = '<i class="bi bi-sun"></i>';
-    }
-    toggleBtn.addEventListener('click', () => {
-      body.classList.toggle('dark-mode');
-      if (body.classList.contains('dark-mode')) {
-        toggleBtn.innerHTML = '<i class="bi bi-sun"></i>';
-        localStorage.setItem('learnee-theme', 'dark');
-      } else {
-        toggleBtn.innerHTML = '<i class="bi bi-moon"></i>';
-        localStorage.setItem('learnee-theme', 'light');
-      }
-    });
   </script>
 </body>
 </html>

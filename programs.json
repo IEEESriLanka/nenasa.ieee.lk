@@ -10,9 +10,17 @@
   {
     "id": "prog-02",
     "title": "Karagasthalawa Maha Vidyalaya Belihuloya",
-    "description": "A fun coding camp introducing students to programming and problem‑solving.",
+    "description": "A coding camp introducing to programming and problem‑solving.",
     "image": "assets/img/Karagasthalawa.jpg",
     "alt": "Workshop at Karagasthalawa Maha Vidyalaya Belihuloya",
     "link": "program2.html"
+  },
+  {
+    "id": "prog-03",
+    "title": "Siri Vidyakeerthi Kanishta Vidyalaya Mirigama",
+    "description": "Basic Electronics Workshop",
+    "image": "assets/img/vidyakeerti.jpg",
+    "alt": "Workshop at Siri Vidyakeerthi Kanishta Vidyalaya Mirigama",
+    "link": "program3.html"
   }
 ]
