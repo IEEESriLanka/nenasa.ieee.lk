@@ -86,6 +86,17 @@
       background-size: contain;
       background-repeat: no-repeat;
     }
+
+    /* Responsive hero brand logos */
+    .brand-logos img{
+      height: clamp(34px, 6vw, 84px);
+      width: auto;                /* override .img-fluid width for logos */
+    }
+    .brand-logos .logo-tall{
+      height: clamp(40px, 6.5vw, 96px);
+    }
+
+
     /* Stat strip */
     .stat-box {
       background: rgba(17, 24, 39, 0.75);
@@ -212,18 +223,17 @@
               <a class="nav-link active" href="#hero">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="competitions.html">Competitions</a>
+              <a class="nav-link" href="./competitions.html">Competitions</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="programs.html">Projects</a>
+              <a class="nav-link" href="./programs.html">Projects</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="about.html">About</a>
+              <a class="nav-link" href="./about.html">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
+              <a class="nav-link" href="./contact.html">Contact</a>
             </li>
-            <!-- Dark mode button removed -->
           </ul>
         </div>
       </div>
@@ -252,7 +262,15 @@
                  url('assets/img/IMG_6178.jpg');">
             <div class="container d-flex align-items-center justify-content-center min-vh-100">
               <div class="row justify-content-center w-100">
+                
                 <div class="col-lg-10 text-center" data-aos="fade-up">
+                  <!-- Added logos START -->
+                  <div class="d-flex justify-content-center align-items-center gap-4 flex-wrap mb-4 brand-logos">
+                    <img src="assets/img/nenasa_Logo.png" alt="Nenasa Logo" class="img-fluid" loading="lazy">
+                    <img src="assets/img/SIGHT-logo.png" alt="IEEE SIGHT Logo" class="img-fluid logo-tall" loading="lazy">
+                    <img src="assets/img/IEEE-SL.png" alt="IEEE Sri Lanka Logo" class="img-fluid" loading="lazy">
+                  </div>
+                  <!-- Added logos END -->
                   <h1 class="mb-3 main-title">Empowering the Next Generation of Innovators in Sri Lanka</h1>
                   <p class="mb-4">
                     Nenasa is transforming STEM education through volunteer based learning <br>
@@ -297,6 +315,13 @@
             <div class="container d-flex align-items-center justify-content-center min-vh-100">
               <div class="row justify-content-center w-100">
                 <div class="col-lg-10 text-center" data-aos="fade-up">
+                  <!-- Added logos START -->
+                  <div class="d-flex justify-content-center align-items-center gap-4 flex-wrap mb-4 brand-logos">
+                    <img src="assets/img/nenasa_Logo.png" alt="Nenasa Logo" class="img-fluid" loading="lazy">
+                    <img src="assets/img/SIGHT-logo.png" alt="IEEE SIGHT Logo" class="img-fluid logo-tall" loading="lazy">
+                    <img src="assets/img/IEEE-SL.png" alt="IEEE Sri Lanka Logo" class="img-fluid" loading="lazy">
+                  </div>
+                  <!-- Added logos END -->
                   <h1 class="mb-3 main-title">Empowering the Next Generation of Innovators in Sri Lanka</h1>
                   <p class="mb-4">
                     Nenasa is transforming STEM education through volunteer based learning <br>
@@ -341,6 +366,13 @@
             <div class="container d-flex align-items-center justify-content-center min-vh-100">
               <div class="row justify-content-center w-100">
                 <div class="col-lg-10 text-center" data-aos="fade-up">
+                  <!-- Added logos START -->
+                  <div class="d-flex justify-content-center align-items-center gap-4 flex-wrap mb-4 brand-logos">
+                    <img src="assets/img/nenasa_Logo.png" alt="Nenasa Logo" class="img-fluid" loading="lazy">
+                    <img src="assets/img/SIGHT-logo.png" alt="IEEE SIGHT Logo" class="img-fluid logo-tall" loading="lazy">
+                    <img src="assets/img/IEEE-SL.png" alt="IEEE Sri Lanka Logo" class="img-fluid" loading="lazy">
+                  </div>
+                  <!-- Added logos END -->
                   <h1 class="mb-3 main-title">Empowering the Next Generation of Innovators in Sri Lanka</h1>
                   <p class="mb-4">
                     Nenasa is transforming STEM education through volunteer based learning <br>
@@ -486,7 +518,7 @@
 
       <p class="mb-1 small">&copy; <span id="year"></span> IEEE Sri Lanka Section. All rights reserved.</p>
       <p class="mb-0 small text-muted">
-        Design & Developed by Nenasa Team
+        Design & Developed by The Nenasa Team
       </p>
     </div>
   </footer>
