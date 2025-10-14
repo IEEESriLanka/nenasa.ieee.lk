@@ -70,7 +70,7 @@
     "description": "Ongoing coding clubs offering project-based learning for students aged 10–16"
   },
   {
-    "title": "STEMUp Educational Foundation Events",
+    "title": "STEMUp Events",
     "image": "assets/img/stemup.jpg",
     "timeline": "Various dates annually",
     "subjects": ["Coding | Robotics"],
@@ -154,6 +154,20 @@
     "description": "A large-scale astronomy observation event with competitions, workshops, and night-sky exploration for astronomy enthusiasts"
   },
   {
+    "title": "Sri Lankan Junior Science Olympiad",
+    "image": "assets/img/sljso_logo_home.png",
+    "timeline": "Registration mid-year; exams later in the year",
+    "subjects": ["Physics | Chemistry | Biology"],
+    "participation": "Individual",
+    "fees": "-",
+    "organizer": "IPSL & NSF",
+    "prizes": "Medals | Certificates | International Participation",
+    "stemAreas": ["Core Sciences | Analytical Skills"],
+    "eventType": "School Event",
+    "link": "https://sljso.lk/",
+    "description": "A national science knowledge test for students aged 13–15, with top performers earning a chance to represent Sri Lanka internationally"
+  },
+  {
     "title": "All-Island School Statistics Competition",
     "image": "assets/img/Institute of Applied Statistics.jpg",
     "timeline": "Opens early year; finals later",
@@ -166,20 +180,6 @@
     "eventType": "School Event",
     "link": "https://www.facebook.com/story.php?id=100064151227913&story_fbid=1045358814279150",
     "description": "Inspires students to use statistics creatively for data analysis and problem-solving in real-world contexts"
-  },
-  {
-    "title": "Sri Lankan Junior Science Olympiad [SLJSO]",
-    "image": "assets/img/sljso_logo_home.png",
-    "timeline": "Registration mid-year; exams later in the year",
-    "subjects": ["Physics | Chemistry | Biology"],
-    "participation": "Individual",
-    "fees": "-",
-    "organizer": "IPSL & NSF",
-    "prizes": "Medals | Certificates | International Participation",
-    "stemAreas": ["Core Sciences | Analytical Skills"],
-    "eventType": "School Event",
-    "link": "https://sljso.lk/",
-    "description": "A national science knowledge test for students aged 13–15, with top performers earning a chance to represent Sri Lanka internationally"
   },
   {
     "title": "DP Education Coding School Competition",
