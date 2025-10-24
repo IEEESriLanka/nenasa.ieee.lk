@@ -17,7 +17,8 @@
       --text-light: #212529;
       --primary: #0066cc;
       --card-bg-light: #ffffff;
-      --card-bg-dark: #1e1e1e; /* unused now, kept for consistency if needed */
+      --card-bg-dark: #1e1e1e;
+      --brand: #2596be;
     }
 
     body {
@@ -272,8 +273,8 @@
     }
 
     .btn-cta{
-    background-color:#2596be;
-    border-color:#2596be;
+    background-color: var(--brand);
+    border-color: var(--brand);
     color:#fff;
     border-radius:9999px;           
     padding:.7rem 1.25rem;
@@ -290,6 +291,7 @@
     transform:translateY(-1px);
     color:#fff;
   }
+  .text-brand{ color: var(--brand) !important; }
 </style>
 
     /* Smooth scroll */
@@ -583,7 +585,7 @@
           <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="card h-100 p-4 text-center">
               <div class="mb-3">
-                <i class="bi bi-person-plus fs-1 text-primary"></i>
+                <i class="bi bi-person-plus fs-1 text-brand"></i>
               </div>
               <h5 class="fw-bold mb-3">Become a Volunteer</h5>
               <p>Share your knowledge. Inspire the future. Join us as a Nenasa volunteer and help bring STEM education to every corner of Sri Lanka.</p>
@@ -593,7 +595,7 @@
           <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
             <div class="card h-100 p-4 text-center">
               <div class="mb-3">
-                <i class="bi bi-building fs-1 text-primary"></i>
+                <i class="bi bi-building fs-1 text-brand"></i>
               </div>
               <h5 class="fw-bold mb-3">Bring Nenasa to My School</h5>
               <p>Bring innovation into your classrooms. Nenasa connects your school with passionate mentors, cutting-edge resources, and a curriculum designed to spark curiosity and creativity in STEM.</p>
