@@ -204,6 +204,73 @@
       padding: 2rem 0;
     }
 
+    .btn-stem-unique{
+      --shadow: 0 10px 20px rgba(37,117,252,.25), 0 2px 6px rgba(106,17,203,.2);
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .5rem .9rem;
+      border-radius: 9999px;
+      border: none;
+      color: #f8f8f8 !important;
+      background: linear-gradient(135deg, var(--grad-a), var(--grad-b));
+      box-shadow: var(--shadow);
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: .2px;
+      transition: transform .15s ease, box-shadow .2s ease, filter .2s ease;
+      overflow: hidden;
+      isolation: isolate;
+    }
+    .btn-stem-unique i{
+      transition: transform .2s ease;
+      font-size: 1.1rem;
+      line-height: 1;
+    }
+    .btn-stem-unique:hover{
+      transform: translateY(-1px);
+      box-shadow: 0 14px 22px rgba(37,117,252,.28), 0 3px 10px rgba(106,17,203,.22);
+      filter: saturate(1.1);
+    }
+    .btn-stem-unique:hover i{
+      transform: translateX(4px) rotate(6deg);
+    }
+    .btn-stem-unique:active{
+      transform: translateY(0);
+    }
+    .btn-stem-unique:focus-visible{
+      outline: 3px solid rgba(37,117,252,.35);
+      outline-offset: 2px;
+    }
+    /* soft sheen sweep */
+    .btn-stem-unique::after{
+      content: "";
+      position: absolute;
+      top: -150%;
+      left: -50%;
+      width: 40%;
+      height: 400%;
+      transform: rotate(25deg);
+      background: linear-gradient( to right, rgba(255,255,255,.0), rgba(255,255,255,.35), rgba(255,255,255,.0) );
+      opacity: .6;
+      transition: transform .5s ease;
+      pointer-events: none;
+      z-index: -1;
+    }
+    .btn-stem-unique:hover::after{
+      transform: translateX(250%) rotate(25deg);
+    }
+    /* Force the unique button to #2596be */
+    .btn-stem-unique{
+    --grad-a: #2596be;
+    --grad-b: #2596be;
+    }
+    @keyframes pop {
+      from { transform: translateY(0) scale(1); opacity: .85; }
+      to   { transform: translateY(-2px) scale(1.15); opacity: 1; }
+    }
+
     /* Smooth scroll */
     html { scroll-behavior: smooth; }
   </style>
@@ -405,6 +472,43 @@
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEM Camp 2025 Section -->
+    <section id="stem-camp-2025" class="py-5">
+      <div class="container">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-6" data-aos="fade-right">
+            <!-- add an image -->
+            <div class="card overflow-hidden">
+              <img src="assets/img/stem-camp-2025.jpg" alt="STEM Camp 2025" class="img-fluid">
+            </div>
+          </div>
+          <div class="col-lg-6" data-aos="fade-left">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <h2 class="mb-0">STEM Camp 2025</h2>
+              <span class="badge rounded-pill text-bg-warning">Coming soon</span>
+            </div>
+            <p class="mb-3">
+              This is a 3-day immersive experience in coding, science, robotics, and design for young explorers.
+            </p>
+            <p class="mb-3">
+              From coding and robotics to design and science, our STEM Skills Camp is designed to make learning exciting.
+            </p>
+            <p class="mb-3">              
+              We offer an unique and engaging environment for children to explore and learn.
+              Over the course of three exciting days, campers will dive into various STEM subjects through fun, interactive projects and activities.
+            </p>
+
+            <a href="stemcamp2025.html"
+               class="btn btn-stem-unique btn-sm" 
+               aria-label="Open details page for STEM Camp 2025">
+              Launch to STEM Camp 2025
+              <i class="bi bi-rocket" aria-hidden="true"></i>
+            </a>
           </div>
         </div>
       </div>
