@@ -17,6 +17,7 @@
       --text-light: #212529;
       --card-bg-light: #ffffff;
       --primary: #0066cc;
+      --brand: #2596be;
     }
 
     body {
@@ -87,8 +88,29 @@
     .contact-icons a:hover {
       transform: scale(1.2);
     }
+    .btn-cta{
+    background-color:var(--brand);
+    border-color:var(--brand);
+    color:#fff;
+    border-radius:9999px;
+    padding:.7rem 1.25rem;
+    font-weight:600;
+    box-shadow:0 6px 16px rgba(37,150,190,.25);
+    transition:transform .15s ease, box-shadow .15s ease, background-color .2s ease;
+    text-decoration:none;
+  }
+  .btn-cta:hover,
+  .btn-cta:focus{
+    background-color:#1f83a6;
+    border-color:#1f83a6;
+    box-shadow:0 8px 20px rgba(37,150,190,.35);
+    transform:translateY(-1px);
+    color:#fff;
+  }
 
-    html { scroll-behavior: smooth; }
+  .text-brand{ color: var(--brand) !important; }
+
+  html { scroll-behavior: smooth; }
   </style>
 </head>
 <body>
@@ -153,7 +175,7 @@
                 <textarea class="form-control" rows="4" placeholder="Message" required></textarea>
               </div>
               <div class="text-center">
-                <button type="submit" class="btn btn-primary">Send Message</button>
+                <button type="submit" class="btn btn-primary btn-cta">Send Message</button>
               </div>
             </form>
           </div>
