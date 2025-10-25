@@ -91,7 +91,7 @@
     /* Responsive hero brand logos */
     .brand-logos img{
       height: clamp(34px, 6vw, 84px);
-      width: auto;                /* override .img-fluid width for logos */
+      width: auto;               
     }
     .brand-logos .logo-tall{
       height: clamp(40px, 6.5vw, 96px);
@@ -333,7 +333,7 @@
 
   <br class="mt-5 pt-2">
 
-    <!-- Hero Section (Carousel, manual nav disabled, same content on all slides) -->
+    <!-- Hero Section -->
     <section id="hero" class="hero">
       <div
         id="heroCarousel"
@@ -397,7 +397,7 @@
             </div>
           </div>
 
-          <!-- Slide 2 (same content) -->
+          <!-- Slide 2 -->
           <div class="carousel-item hero-slide"
                style="background-image:
                  linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.7)),
@@ -447,7 +447,7 @@
             </div>
           </div>
 
-          <!-- Slide 3 (same content) -->
+          <!-- Slide 3 -->
           <div class="carousel-item hero-slide"
                style="background-image:
                  linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.7)),
@@ -455,7 +455,7 @@
             <div class="container d-flex align-items-center justify-content-center min-vh-100">
               <div class="row justify-content-center w-100">
                 <div class="col-lg-10 text-center" data-aos="fade-up">
-                  <!-- Added logos START -->
+
                   <div class="d-flex justify-content-center align-items-center gap-4 flex-wrap mb-4 brand-logos">
                     <img src="assets/img/nenasa_Logo.png" alt="Nenasa Logo" class="img-fluid" loading="lazy">
                     <img src="assets/img/SIGHT-logo.png" alt="IEEE SIGHT Logo" class="img-fluid logo-tall" loading="lazy">
@@ -500,49 +500,43 @@
       </div>
     </section><br><br>
 
-    <!-- STEM Camp 2025 Section -->
-    <section id="stem-camp-2025" class="py-5">
-      <div class="container">
-        <div class="row g-4 align-items-center">
-          <div class="col-lg-6" data-aos="fade-right">
-            <!-- add an image -->
-            <div class="card overflow-hidden">
-              <img src="assets/img/stem-camp2025.jpg" alt="STEM Camp 2025" class="img-fluid">
-            </div>
-          </div>
-          <div class="col-lg-6" data-aos="fade-left">
-            <div class="d-flex align-items-center gap-3 mb-2">
-              <h2 class="mb-0">STEM Camp 2025</h2>
-              <span class="badge rounded-pill text-bg-warning">Coming soon</span>
-            </div>
-            <p class="mb-3">
-              This initiative outlines a three-day STEM Camp designed to ignite curiosity and innovation in students from
-              underserved communities across Sri Lanka.
-            </p>
-            <p class="mb-3">
-              Targeting 150 students and 20 teachers from all 9 provinces,
-              this initiative is grounded in experiential learning, inclusivity , and long-term impact. Hosted at the Open
-              University of Sri Lanka (OUSL), Colombo, from November 8 th th
-              to 10 , the camp is tailored for Grade 9 & 10
-              students from schools with limited lab access for Science and IT .
-            </p>
-            <p class="mb-3">              
-              It integrates engaging DIY STEM activities,
-              mentorship, innovation challenges, and a train-the-trainer component to empower both students and
-              educators. The initiative reflects a strong commitment to advancing national STEM goals, encouraging
-              equitable access to learning resources, and nurturing a culture of grassroots innovation.
-            </p>
-
-            <a href="./stemcamp2025"
-               class="btn btn-stem-unique btn-sm" 
-               aria-label="Open details page for STEM Camp 2025">
-              More information on STEM Camp 2025
-              <i class="bi bi-rocket" aria-hidden="true"></i>
-            </a>
-          </div>
+<!-- STEM Camp 2025 Section -->
+<section id="stem-camp-2025" class="py-5">
+  <div class="container">
+    <div class="row g-4 align-items-center">
+      <div class="col-lg-6" data-aos="fade-right">
+        <div class="card overflow-hidden">
+          <img src="assets/img/stem-camp-2025.jpg" alt="STEM Camp 2025" class="img-fluid">
         </div>
       </div>
-    </section>
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="d-flex align-items-center gap-3 mb-2">
+          <h2 class="mb-0">STEM Camp 2025</h2>
+          <span class="badge rounded-pill text-bg-warning">Coming soon</span>
+        </div>
+        <p class="mb-3">
+          This initiative outlines a three-day STEM Camp designed to ignite curiosity and innovation in students from
+          underserved communities across Nepal.
+        </p>
+
+        <div class="d-flex align-items-center gap-4 flex-wrap mb-3" aria-label="STEM Camp partners">
+          <img src="assets/img/R10-Logo.png" alt="ADS Logo" class="img-fluid" style="height:clamp(28px,5vw,44px);" loading="lazy">
+          <img src="assets/img/SIGHT-logo.png" alt="IEEE SIGHT Logo" class="img-fluid" style="height:clamp(32px,5.5vw,50px);" loading="lazy">
+          <img src="assets/img/IEEE-SL.png" alt="IEEE Sri Lanka Section Logo" class="img-fluid" style="height:clamp(28px,5vw,44px);" loading="lazy">
+          <img src="assets/img/nenasa_Logo.png" alt="Partner Logo" class="img-fluid" style="height:clamp(28px,5vw,44px);" loading="lazy">
+        </div><br>
+
+        <a href="./stemcamp2025"
+           class="btn btn-stem-unique btn-sm" 
+           aria-label="Open details page for STEM Camp 2025">
+          More information on STEM Camp 2025
+          <i class="bi bi-rocket" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
 
     <!-- Why It Matters Section -->
     <section id="why" class="py-5 bg-light">
