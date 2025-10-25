@@ -5,7 +5,7 @@
     "description": "Introducing IoT concepts through playful, kid-friendly projects.",
     "image": "assets/img/pre-session-01.jpg",
     "alt": "Kottawa Dharmapala College",
-    "link": "program-kottawa-dharmapala.html"
+    "link": "./program-kottawa-dharmapala"
   },
   {
     "id": "prog-2024-02",
@@ -13,7 +13,7 @@
     "description": "Workshops on circuits, coding, and simple machines.",
     "image": "assets/img/pre-session-02.jpg",
     "alt": "Arawwala Dharmapala Vidyalaya",
-    "link": "program-arawwala-dharmapala.html"
+    "link": "./program-arawwala-dharmapala"
   },
   {
     "id": "prog-2024-03",
@@ -21,7 +21,7 @@
     "description": "Exploring IoT by connecting sensors to the cloud in a hands-on workshop.",
     "image": "assets/img/pre-session-03.jpg",
     "alt": "Sri Sumangala Maha Vidyalaya Nabadawewa",
-    "link": "program-nabadawewa-sumangala.html"
+    "link": "./program-nabadawewa-sumangala"
   },
   {
     "id": "prog-2024-04",
@@ -29,7 +29,7 @@
     "description": "Discovering how IoT bridges the physical and digital worlds.",
     "image": "assets/img/pre-session-04.jpg",
     "alt": "Badulla Central College",
-    "link": "program-badulla-central.html"
+    "link": "./program-badulla-central"
   },
   {
     "id": "prog-2024-05",
@@ -37,6 +37,6 @@
     "description": "Creating interactive IoT projects that respond to real-world data.",
     "image": "assets/img/pre-session-05.jpg",
     "alt": "Fathima Muslim Ladies College Colombo",
-    "link": "program-muslim-ladies.html"
+    "link": "./program-muslim-ladies"
   }
 ]
