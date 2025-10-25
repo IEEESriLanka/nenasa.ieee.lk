@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About – Nenasa</title>
+  <!-- Fonts and Icons -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <style>
+    /* Reuse the same colour palette and variables from the home page */
+    :root {
+      --bg-light: #ffffff;
+      --text-light: #212529;
+      --bg-dark: #242323;
+      --text-dark: #f8f9fa;
+      --primary: #0066cc;
+      --card-bg-light: #ffffff;
+      --card-bg-dark: #1e1e1e;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-light);
+      transition: background-color 0.3s, color 0.3s;
+    }
+    header {
+      background-color: var(--bg-light);
+      transition: background-color 0.3s;
+    }
+
+    @media (min-width: 992px) {
+      header {
+        padding-left: 2%;
+        padding-right: 2%;
+      }
+    }
+
+    .navbar-brand {
+      background-image: url('/assets/img/nenasa_Logo.png');
+      width: 120px;
+      height: 40px;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    /* Card hover effect */
+    .card-hover {
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card-hover:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    footer {
+      background-color: var(--bg-light);
+      color: var(--text-light);
+      padding: 2rem 0;
+    }
+    /* Smooth scroll */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .team-member {
+        width: 350px;
+        height: 350px; 
+        object-fit:cover;
+    }
+
+    .img-fluid {
+      padding: 0px 15px 0px 15px;
+    }
+
+    .nenasa_para {
+      text-align: justify;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Header and Navigation -->
+  <header class="fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="./index"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav align-items-lg-center">
+            <li class="nav-item">
+              <a class="nav-link" href="./index">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./competitions">Competitions</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./programs">Workshops</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./about">About</a>
+            </li>
+            <li class="nav-item">
+              <!-- chng -->
+              <a class="nav-link" href="./contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main class="mt-5 pt-2">
+    <!-- Mission Statement Section -->
+    <section id="mission" class="py-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10" data-aos="fade-up">
+            <h2 class="text-center fw-bold mb-4">Nenasa STEM Camp - 2025 </h2>
+            <br>
+            <h2>Overview</h2>
+            <p class="lead nenasa_para">This initiative outlines a three-day STEM Camp designed to ignite curiosity and innovation in students from underserved communities across Sri Lanka. 
+            
+            Targeting 150 students and 20 teachers from all 9 provinces, this initiative is grounded in experiential learning, inclusivity, and long-term impact. Hosted at the Open University of Sri Lanka (OUSL), Colombo, from November 8 to 10, the camp is tailored for Grade 9 & 10 students from schools with limited lab access for Science and IT. 
+            
+            It integrates engaging DIY STEM activities, mentorship, innovation challenges, and a train-the-trainer component to empower both students and educators. The initiative reflects a strong commitment to advancing national STEM goals, encouraging equitable access to learning resources, and nurturing a culture of grassroots innovation.
+            </p><br>
+
+            <h2>Target Audience</h2>
+            <p class="lead nenasa_para">- 150 students (Grades 9–10) from all 9 provinces of Sri Lanka
+            <br>
+            - 20 science/technology teachers selected from the same schools
+            </p><br>
+
+            <h2>Date and Venue</h2>
+            <p class="lead nenasa_para">- Dates:November 8, 9 and 10
+            <br>
+            - Venue: TheOpen University of Sri Lanka (OUSL), Colombo
+            </p><br>
+
+            <h2>Outcomes to gain</h2>
+            <p class="lead nenasa_para">- Increased awareness of STEM career and education pathways
+            <br>
+            - Confidence in using local/low-cost resources for science
+            <br>
+            - Basic understanding of sustainable innovation concepts
+            <br>
+            - Peer learning and team collaboration through challenges
+            <br>
+            - Teachers trained with practical take-home lesson plans
+            <br>
+            - Formation of science clubs for continuity in schools
+            </p><br>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <!-- Footer -->
+  <footer class="text-center pt-4 pb-4">
+    <div class="container">
+      <!-- Logos row: partner - main - partner -->
+      <div class="d-flex justify-content-center align-items-center gap-4 flex-wrap mb-3">
+        <!-- Partner (left) -->
+        <img src="assets/img/nenasa_Logo.png" alt="Partner logo 1"
+            class="img-fluid" style="height:36px" loading="lazy">
+        <!-- Main site logo (center) -->
+        <img src="assets/img/SIGHT-logo.png" alt="Main site logo"
+            class="img-fluid" style="height:48px" loading="lazy">
+        <!-- Partner (right) -->
+        <img src="assets/img/IEEE-SL.png" alt="Partner logo 2"
+            class="img-fluid" style="height:36px" loading="lazy">
+      </div>
+
+      <!-- Social links -->
+      <ul class="list-unstyled d-flex justify-content-center gap-3 fs-4 mb-3">
+        <li>
+          <a href="https://www.facebook.com/share/1HcgRAAKkG/" target="_blank" rel="noopener"
+            class="text-decoration-none text-body" aria-label="Facebook">
+            <i class="bi bi-facebook"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/ieeenenasa?igsh=cmxsMmJudm5hamdl" target="_blank" rel="noopener"
+            class="text-decoration-none text-body" aria-label="Instagram">
+            <i class="bi bi-instagram"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/company/ieee-nenasa/" target="_blank" rel="noopener"
+            class="text-decoration-none text-body" aria-label="LinkedIn">
+            <i class="bi bi-linkedin"></i>
+          </a>
+        </li>
+        <li>
+          <a href="contact.html"
+            class="text-decoration-none text-body" aria-label="Email">
+            <i class="bi bi-envelope"></i>
+          </a>
+        </li>
+      </ul>
+
+      <!-- Copyright / claims -->
+      <p class="mb-1 small">&copy; <span id="year"></span> IEEE Sri Lanka Section. All rights reserved.</p>
+      <p class="mb-0 small text-muted">
+        Design & Developed by Nenasa Project
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    // Set current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Initialise AOS animations
+    AOS.init({ once: true });
+  </script>
+</body>
+</html>
