@@ -5,7 +5,7 @@
     "description": "Hands-on workshop where students design and build their own games while learning coding, storytelling, and game mechanics.",
     "image": "assets/img/Nakkawatta.jpg",
     "alt": "Workshop at Nakkawatta National School Kurunegala",
-    "link": "program1.html"
+    "link": "./program1"
   },
   {
     "id": "prog-02",
@@ -13,7 +13,7 @@
     "description": "A coding camp introducing to programming and problem‑solving.",
     "image": "assets/img/Karagasthalawa.jpg",
     "alt": "Workshop at Karagasthalawa Maha Vidyalaya Belihuloya",
-    "link": "program2.html"
+    "link": "./program2"
   },
   {
     "id": "prog-03",
@@ -21,6 +21,6 @@
     "description": "Basic Electronics Workshop",
     "image": "assets/img/vidyakeerti.jpg",
     "alt": "Workshop at Siri Vidyakeerthi Kanishta Vidyalaya Mirigama",
-    "link": "program3.html"
+    "link": "./program3"
   }
 ]
